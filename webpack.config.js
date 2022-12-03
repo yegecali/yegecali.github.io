@@ -8,7 +8,7 @@ module.exports = {
     //☝🏽 Insert your PUG HTML files here
   },
   output: {
-    path: path.join(__dirname, 'dist/'),
+    path: path.join(__dirname, 'doc/'),
     publicPath: '/',
     filename: 'assets/js/[name].[contenthash:8].js'
     //☝🏽 Output filename of files with hash for unique id
@@ -54,7 +54,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist')
+      directory: path.join(__dirname, 'doc')
     },
     watchFiles: {
       paths: ['src/**/*.*', 'src/scss/**/*.*'],
