@@ -1,0 +1,75 @@
+@use '../abstracts' as *;
+
+.site-shell {
+  width: min($content-width, calc(100% - 80px));
+  margin: auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 60px;
+  align-items: start;
+  padding: 64px 0 80px;
+}
+
+.content-section {
+  padding-top: 62px;
+  scroll-margin-top: 30px;
+}
+
+@include up(wide) {
+  .site-shell {
+    width: $content-width;
+  }
+
+  .layout {
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 80px;
+  }
+}
+
+@include down(tablet) {
+  .site-shell {
+    width: calc(100% - 48px);
+  }
+
+  .layout {
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@include down(mobile) {
+  .site-shell {
+    max-width: 520px;
+    width: calc(100% - 40px);
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    padding-top: 38px;
+    padding-bottom: 45px;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .content-section {
+    padding-top: 44px;
+  }
+}
+
+@include down(small) {
+  .site-shell {
+    width: calc(100% - 30px);
+  }
+}
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+}

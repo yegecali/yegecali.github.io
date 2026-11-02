@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+footer {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  border-top: 1px solid $border-subtle;
+  padding: 25px 0 32px;
+  color: #7b839b;
+  font-size: 9px;
+}
+
+footer>a:last-child {
+  margin-left: auto;
+  font-size: 18px;
+  border: 1px solid #ffffff12;
+  padding: 5px 11px;
+  border-radius: 8px;
+}
+
+.footer-brand {
+  color: #e9b77e;
+  font: 700 24px $font-heading;
+  letter-spacing: -2px;
+}
+
+@include down(mobile) {
+  footer {
+    gap: 14px;
+    line-height: 1.8;
+  }
+
+  footer p span {
+    display: block;
+  }
+}

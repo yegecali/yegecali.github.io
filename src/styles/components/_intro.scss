@@ -1,0 +1,82 @@
+@use '../abstracts' as *;
+
+.intro {
+  position: relative;
+  margin: 8px 0 48px;
+}
+
+.intro h2 {
+  font: 500 clamp(40px, 4.5vw, 58px)/1.12 $font-heading;
+  letter-spacing: -2.6px;
+  margin: 22px 0 20px;
+  position: relative;
+  width: fit-content;
+}
+
+.intro h2>span {
+  color: $text-muted;
+}
+
+.intro-spark {
+  position: absolute;
+  right: -59px;
+  top: 5px;
+  color: #f2ba78;
+  transform: rotate(10deg);
+}
+
+.intro>p:last-child {
+  color: #999fb5;
+  font-size: 13px;
+  line-height: 1.85;
+  max-width: 450px;
+}
+
+@include up(wide) {
+  .intro h2 {
+    font-size: 64px;
+  }
+}
+
+@include down(tablet) {
+  .intro h2 {
+    font-size: 46px;
+  }
+
+  .intro-spark {
+    right: -41px;
+    width: 24px;
+  }
+}
+
+@include down(mobile) {
+  .intro {
+    margin: 0 0 37px;
+  }
+
+  .intro h2 {
+    font-size: clamp(38px, 10.8vw, 47px);
+    letter-spacing: -2px;
+  }
+
+  .intro>p:last-child {
+    font-size: 13px;
+  }
+
+  .intro-spark {
+    right: 0;
+    top: -16px;
+  }
+}
+
+@include down(small) {
+  .intro h2 {
+    font-size: 41px;
+  }
+
+  .intro-spark {
+    right: 0;
+    top: -16px;
+    width: 22px;
+  }
+}

@@ -1,0 +1,17 @@
+// Shared design values. Component-specific colors stay with their component.
+$font-body: 'DM Sans', sans-serif;
+$font-heading: 'Space Grotesk', sans-serif;
+$text-primary: #f1f1f8;
+$background: #090c16;
+$text-muted: #a0a7bc;
+$accent: #efb67e;
+$focus-ring: #ffc271;
+$border-subtle: #ffffff0b;
+$content-width: 1180px;
+
+$breakpoints: (
+  small: 360px,
+  mobile: 760px,
+  tablet: 1050px,
+  wide: 1400px,
+);

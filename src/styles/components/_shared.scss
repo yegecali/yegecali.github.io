@@ -1,0 +1,117 @@
+@use '../abstracts' as *;
+
+.muted {
+  color: #9399af;
+}
+
+.eyebrow>span {
+  width: 5px;
+  height: 5px;
+  background: #e7b377;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.eyebrow {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  color: #c2a58a;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.section-top h2 {
+  font: 500 23px $font-heading;
+  letter-spacing: -.6px;
+  margin: 0;
+}
+
+.section-top>span {
+  font-family: monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #70778f;
+  white-space: nowrap;
+}
+
+.section-top .eyebrow {
+  margin-bottom: 13px;
+}
+
+.section-description {
+  color: #878fa7;
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 0 0 22px;
+}
+
+.mini-label {
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  color: #a9a4bc;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tags span {
+  padding: 5px 7px;
+  border: 1px solid $border-subtle;
+  border-radius: 5px;
+  color: #9fa8bf;
+  font-size: 8px;
+  background: #ffffff03;
+}
+
+.skip-link {
+  position: fixed;
+  top: -80px;
+  padding: 14px;
+  background: #f7bd7b;
+  color: #16121c;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+@include down(tablet) {
+  .section-top>span {
+    font-size: 7px;
+  }
+}
+
+@include down(mobile) {
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .section-top h2 {
+    font-size: 23px;
+  }
+
+  .tags span {
+    font-size: 7px;
+  }
+}
+
+@include down(small) {
+  .section-top>span {
+    display: none;
+  }
+}

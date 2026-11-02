@@ -1,0 +1,178 @@
+@use '../abstracts' as *;
+
+.social-card,
+.project-card,
+.focus-card,
+.skill-card {
+  transition: transform 240ms ease, border-color 240ms ease, background-color 240ms ease;
+}
+
+.connect,
+.language,
+.copy-button,
+.profile-socials a,
+.filters button,
+footer>a:last-child {
+  transition: transform 200ms ease, color 200ms ease, background-color 200ms ease;
+}
+
+.card-link svg,
+.repo-link svg,
+.card-top>svg,
+.focus-card>svg,
+.connect>svg,
+.contact a svg {
+  transition: transform 240ms ease;
+}
+
+.header nav a {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ffc77e;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.header nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.social-card:focus-visible,
+.project-card:focus-visible,
+.focus-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: #b69d7970;
+}
+
+.social-card:focus-visible .card-link svg,
+.project-card:focus-visible .repo-link svg {
+  transform: translate(3px, -2px);
+}
+
+.project-art>svg {
+  transition: transform 380ms cubic-bezier(.2, .7, .3, 1);
+}
+
+.monogram {
+  transition: transform 500ms cubic-bezier(.2, .7, .3, 1);
+}
+
+.portrait::after {
+  content: '';
+  position: absolute;
+  inset: -30% -60%;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 40%, #fff5d94a 50%, transparent 60%);
+  transform: translateX(-100%);
+}
+
+@include motion-safe {
+  .header {
+    animation: header-arrive 600ms ease both;
+  }
+
+  .profile-status i {
+    animation: status-pulse 2.5s ease-out 3;
+  }
+
+  .copy-feedback:not(:empty) {
+    animation: feedback-arrive 200ms ease both;
+  }
+}
+
+@include fine-pointer {
+  .social-card:hover,
+  .project-card:hover,
+  .focus-card:hover,
+  .skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #b69d7970;
+  }
+
+  .social-card:hover .card-link svg,
+  .project-card:hover .repo-link svg,
+  .focus-card:hover>svg,
+  .connect:hover>svg,
+  .contact a:hover svg {
+    transform: translate(3px, -2px);
+  }
+
+  .social-card:hover .card-top>svg {
+    transform: translate(2px, -2px);
+  }
+
+  .project-card:hover .project-art>svg {
+    transform: translateY(-4px) scale(1.08);
+  }
+
+  .portrait:hover .monogram {
+    transform: rotate(-3deg) scale(1.04);
+  }
+
+  .portrait:hover::after {
+    transform: translateX(100%);
+    transition: transform 850ms ease;
+  }
+
+  .header nav a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .connect:hover,
+  .copy-button:hover,
+  .profile-socials a:hover,
+  footer>a:last-child:hover {
+    transform: translateY(-2px);
+  }
+
+  .filters button:hover:not(.active) {
+    color: #edcba4;
+    background: #f3ba7b0a;
+  }
+}
+
+@include reduced-motion {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  [data-aos].aos-init {
+    opacity: 1 !important;
+    translate: none !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  .social-card:hover,
+  .project-card:hover,
+  .focus-card:hover,
+  .skill-card:hover,
+  .project-card:hover .project-art>svg {
+    transform: none;
+  }
+
+  .portrait:hover .monogram {
+    transform: rotate(-8deg);
+  }
+
+  .portrait::after {
+    display: none;
+  }
+}

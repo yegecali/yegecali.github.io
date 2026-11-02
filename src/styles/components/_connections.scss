@@ -1,0 +1,175 @@
+@use '../abstracts' as *;
+
+.bento {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 14px;
+}
+
+.social-card {
+  border-radius: 21px;
+  padding: 25px;
+  min-height: 240px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ffffff0a;
+  transition: transform .2s, border-color .2s;
+}
+
+.social-card:hover {
+  transform: translateY(-4px);
+  border-color: #b69d794a;
+}
+
+.github-card {
+  background: radial-gradient(ellipse at 0 0, #45445070, transparent 70%), linear-gradient(140deg, #242332, #12101e);
+}
+
+.linkedin-card {
+  background: radial-gradient(at 0 0, #43b7fd, #1669b8 75%, #1156a0);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.social-symbol {
+  color: #eeedf7;
+  filter: drop-shadow(0 4px 4px #0005);
+}
+
+.social-card h3 {
+  font: 600 24px $font-heading;
+  margin: 6px 0 9px;
+  letter-spacing: -.6px;
+}
+
+.social-card p {
+  font-size: 11px;
+  color: #b0aabd;
+  line-height: 1.7;
+  max-width: 190px;
+  margin: 0 0 17px;
+}
+
+.linkedin-card p {
+  color: #e0eeff;
+}
+
+.card-link {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 10px;
+  color: #ddd9e7;
+}
+
+.linkedin-card .card-link {
+  color: #fff;
+}
+
+.ghost-code {
+  position: absolute;
+  right: -12px;
+  top: 59px;
+  font: 100px $font-heading;
+  color: #ffffff04;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+.focus-card {
+  grid-column: 1/-1;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 23px;
+  border-radius: 20px;
+  border: 1px solid #6a4b8255;
+  background: radial-gradient(ellipse at 0 0, #65427655, transparent), #1a1427;
+}
+
+.focus-icon {
+  color: #c7a4f4;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: #b37beb12;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.focus-card h3 {
+  font: 500 16px $font-heading;
+  margin: 5px 0 6px;
+}
+
+.focus-card p {
+  font-size: 10px;
+  color: #aaa1ba;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.focus-card>svg {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: #c0aed9;
+}
+
+@include down(tablet) {
+  .social-card {
+    padding: 21px;
+  }
+}
+
+@include down(mobile) {
+  .social-card {
+    padding: 20px;
+    min-height: 230px;
+    border-radius: 19px;
+  }
+
+  .social-card h3 {
+    font-size: 23px;
+  }
+
+  .social-card p {
+    font-size: 10px;
+  }
+
+  .card-link {
+    font-size: 9px;
+  }
+
+  .focus-card {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .focus-card p {
+    font-size: 10px;
+  }
+
+  .focus-card h3 {
+    font-size: 15px;
+  }
+
+  .focus-icon {
+    width: 37px;
+  }
+}
+
+@include down(small) {
+  .social-card {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,22 @@
+// Entry point: base, layout, components, then motion and library overrides.
+@use 'aos/dist/aos.css' as aos-library;
+@use 'base/reset';
+@use 'layout/page';
+@use 'components/shared';
+@use 'components/header';
+@use 'components/portrait';
+@use 'components/profile';
+@use 'components/intro';
+@use 'components/connections';
+@use 'components/projects';
+@use 'components/experience';
+@use 'components/project-themes';
+@use 'components/skills';
+@use 'components/about';
+@use 'components/contact';
+@use 'components/footer';
+@use 'components/particles';
+@use 'base/keyframes';
+@use 'base/motion';
+@use 'vendors/aos';
+@use 'vendors/react-spring';

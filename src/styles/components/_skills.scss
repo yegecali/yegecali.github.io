@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.skill-card {
+  padding: 21px;
+  border: 1px solid $border-subtle;
+  border-radius: 16px;
+  background: #13172466;
+}
+
+.skill-card>svg {
+  color: #bca184;
+}
+
+.skill-card h3 {
+  font: 500 12px $font-heading;
+  margin: 13px 0 16px;
+}
+
+.skill-card .tags {
+  gap: 5px;
+}
+
+.skill-card .tags span {
+  border: 0;
+  padding: 3px 0;
+  margin-right: 7px;
+  font-size: 9px;
+  background: none;
+}
+
+@include down(mobile) {
+  .skills-grid {
+    gap: 10px;
+  }
+
+  .skill-card {
+    padding: 18px;
+  }
+}

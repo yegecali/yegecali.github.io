@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.particles-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particles-background canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@include reduced-motion {
+  .particles-background {
+    display: none;
+  }
+}

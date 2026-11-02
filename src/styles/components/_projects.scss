@@ -1,0 +1,202 @@
+@use '../abstracts' as *;
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #b69d794a;
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+  margin: 24px 0 21px;
+  border-bottom: 1px solid $border-subtle;
+  padding-bottom: 13px;
+}
+
+.filters button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  color: #8b92aa;
+  font-size: 11px;
+  padding: 9px 13px;
+  border-radius: 8px;
+}
+
+.filters button.active {
+  color: #f5d4a9;
+  background: #f3ba7b14;
+}
+
+.filters button>span {
+  font-size: 8px;
+  background: #f7b2691a;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.project-card {
+  border: 1px solid $border-subtle;
+  border-radius: 17px;
+  overflow: hidden;
+  background: #111522;
+  transition: transform .2s, border-color .2s;
+}
+
+.project-visual {
+  height: 160px;
+  background: radial-gradient(ellipse at 50% 95%, #426d6c4f, transparent 70%), #16262c;
+  position: relative;
+  padding: 17px;
+  overflow: hidden;
+}
+
+.project-number {
+  font: 8px monospace;
+  letter-spacing: 1px;
+  color: #9abbb9;
+  text-transform: uppercase;
+}
+
+.project-art {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: #a2d5cd;
+}
+
+.project-art>span {
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+  opacity: .4;
+  position: relative;
+}
+
+.project-art>span:after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 1px solid currentColor;
+  top: -3px;
+  right: 0;
+  border-radius: 50%;
+}
+
+.project-visual:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#b0dacf19 1px, transparent 1px);
+  background-size: 17px 17px;
+  mask-image: linear-gradient(transparent, #000);
+}
+
+.visual-caption {
+  position: absolute;
+  bottom: 18px;
+  font: 11px $font-heading;
+  color: #b4c9c9;
+}
+
+.project-visual>svg {
+  position: absolute;
+  right: 17px;
+  bottom: 17px;
+  color: #86a5a9;
+}
+
+.project-copy {
+  padding: 21px 19px;
+}
+
+.project-copy h3 {
+  font: 500 13px $font-heading;
+  overflow-wrap: anywhere;
+  margin: 0 0 10px;
+}
+
+.project-copy p {
+  font-size: 10px;
+  line-height: 1.85;
+  color: #959db4;
+  margin: 0 0 16px;
+  min-height: 55px;
+}
+
+.repo-link {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 9px;
+  color: #d0c7be;
+  margin-top: 22px;
+}
+
+@include down(mobile) {
+  .project-grid {
+    gap: 12px;
+  }
+
+  .project-copy {
+    padding: 18px 14px;
+  }
+
+  .project-copy h3 {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .project-copy p {
+    min-height: 74px;
+  }
+
+  .project-visual {
+    height: 150px;
+    padding: 13px;
+  }
+
+  .project-number {
+    font-size: 7px;
+  }
+
+  .project-art {
+    gap: 9px;
+  }
+
+  .project-art>span {
+    width: 21px;
+  }
+
+  .visual-caption {
+    font-size: 10px;
+  }
+}
+
+@include down(small) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-copy p {
+    min-height: 0;
+  }
+
+  .filters button {
+    padding: 8px 10px;
+  }
+}

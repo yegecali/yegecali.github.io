@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+[data-aos="portfolio-up"].aos-init {
+  opacity: 0;
+  translate: 0 20px;
+  transition-property: opacity, translate, transform, border-color, background-color;
+  transition-duration: 650ms, 650ms, 240ms, 240ms, 240ms;
+  transition-timing-function: ease, cubic-bezier(.2, .7, .3, 1), ease, ease, ease;
+}
+
+[data-aos="portfolio-up"].aos-animate {
+  opacity: 1;
+  translate: 0 0;
+}
+
+[data-aos="portfolio-up"]:focus-within {
+  opacity: 1;
+  translate: 0 0;
+}

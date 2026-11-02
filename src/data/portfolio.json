@@ -1,0 +1,657 @@
+{
+  "defaultLanguage": "es",
+  "languages": [
+    {
+      "code": "es",
+      "label": "ES",
+      "switchLabel": "Cambiar a español"
+    },
+    {
+      "code": "en",
+      "label": "EN",
+      "switchLabel": "Switch to English"
+    }
+  ],
+  "metadata": {
+    "title": "Yemi Genderson | Ingeniero de Software Backend Java y Cloud",
+    "description": {
+      "es": "Portafolio de Yemi Genderson, ingeniero de software especializado en Java, microservicios y Azure.",
+      "en": "Portfolio of Yemi Genderson, software engineer focused on Java, microservices and Azure."
+    },
+    "siteUrl": "https://yegecali.github.io/",
+    "siteName": "Yemi Genderson — Portfolio",
+    "openGraphLocale": "es_PE",
+    "themeColor": "#0b1120",
+    "searchConsoleVerification": ""
+  },
+  "brand": {
+    "logo": "yg",
+    "name": "yemi",
+    "suffix": ".dev",
+    "footerLogo": "yg."
+  },
+  "profile": {
+    "name": "Yemi Genderson",
+    "handle": "@yegecali",
+    "primarySocial": "github",
+    "contactSocial": "linkedin",
+    "specialty": "Java & Cloud",
+    "monogram": {
+      "primary": "Y",
+      "secondary": "G",
+      "punctuation": ".",
+      "code": "</>",
+      "caption": "BACKEND / CLOUD"
+    },
+    "cv": {
+      "path": "cv/Yemi-Genderson-Backend-Java.pdf",
+      "filename": "Yemi-Genderson-Backend-Java.pdf"
+    }
+  },
+  "navigation": [
+    {
+      "id": "experience",
+      "labelKey": "experience"
+    },
+    {
+      "id": "projects",
+      "labelKey": "projects"
+    },
+    {
+      "id": "skills",
+      "labelKey": "skills"
+    },
+    {
+      "id": "about",
+      "labelKey": "about"
+    }
+  ],
+  "socials": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/yegecali",
+      "kicker": "CODE & OPEN SOURCE",
+      "descriptionKey": "github",
+      "actionKey": "repositories",
+      "decoration": "{ }"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "icon": "linkedin",
+      "url": "https://www.linkedin.com/in/yemigenderson/",
+      "descriptionKey": "linkedin",
+      "actionKey": "visit"
+    }
+  ],
+  "sections": {
+    "connections": {
+      "marker": "01 — CONNECT"
+    },
+    "projects": {
+      "marker": "03 — BUILD"
+    },
+    "skills": {
+      "marker": "04 — TOOLKIT"
+    },
+    "about": {
+      "marker": "05 — HUMAN"
+    },
+    "contact": {
+      "eyebrow": "LET’S MAKE IT HAPPEN"
+    },
+    "experience": {
+      "marker": "02 — EXPERIENCE"
+    }
+  },
+  "projectFilters": [
+    {
+      "id": "all",
+      "labelKey": "all"
+    },
+    {
+      "id": "cloud",
+      "labelKey": "cloud"
+    },
+    {
+      "id": "backend",
+      "labelKey": "backend"
+    },
+    {
+      "id": "quality",
+      "labelKey": "quality"
+    }
+  ],
+  "projects": [
+    {
+      "name": "automation-identity-azure",
+      "url": "https://github.com/yegecali/automation-identity-azure",
+      "description": {
+        "es": "Automatización de tareas e integraciones de identidad en el ecosistema Azure.",
+        "en": "Automation of identity tasks and integrations in the Azure ecosystem."
+      },
+      "tags": [
+        "Azure",
+        "Automation",
+        "Identity"
+      ],
+      "id": "automation-identity-azure",
+      "category": "cloud",
+      "displayName": "Identity automation",
+      "icon": "cloud",
+      "tone": "teal"
+    },
+    {
+      "name": "proxy-resilience",
+      "url": "https://github.com/yegecali/proxy-resilience",
+      "description": {
+        "es": "Exploración de mecanismos de resiliencia y tolerancia a fallos.",
+        "en": "Exploration of resilience and fault-tolerance mechanisms."
+      },
+      "tags": [
+        "Resilience",
+        "Backend"
+      ],
+      "id": "proxy-resilience",
+      "category": "backend",
+      "displayName": "Proxy resilience",
+      "icon": "activity",
+      "tone": "purple"
+    },
+    {
+      "name": "template-karate-e2e",
+      "url": "https://github.com/yegecali/template-karate-e2e",
+      "description": {
+        "es": "Plantilla para pruebas automatizadas de extremo a extremo.",
+        "en": "Template for automated end-to-end testing."
+      },
+      "tags": [
+        "Karate",
+        "E2E",
+        "Testing"
+      ],
+      "id": "template-karate-e2e",
+      "category": "quality",
+      "displayName": "Karate E2E",
+      "icon": "shield",
+      "tone": "amber"
+    },
+    {
+      "name": "template-playwright-e2e",
+      "url": "https://github.com/yegecali/template-playwright-e2e",
+      "description": {
+        "es": "Base reutilizable para automatización de pruebas con Playwright.",
+        "en": "Reusable base for test automation with Playwright."
+      },
+      "tags": [
+        "Playwright",
+        "Testing"
+      ],
+      "id": "template-playwright-e2e",
+      "category": "quality",
+      "displayName": "Playwright E2E",
+      "icon": "terminal",
+      "tone": "blue"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Backend & Reactive",
+      "items": [
+        "Java",
+        "Spring Boot",
+        "Spring WebFlux",
+        "RxJava",
+        "Quarkus",
+        "Python",
+        "Java 17+",
+        "Spring Cloud",
+        "Project Reactor",
+        "Reactive Streams"
+      ],
+      "id": "backend",
+      "icon": "code"
+    },
+    {
+      "title": "Architecture",
+      "items": [
+        "Microservices",
+        "DDD",
+        "Event-Driven",
+        "CQRS",
+        "Saga",
+        "Outbox",
+        "API-first",
+        "OpenAPI 3.x",
+        "Resilience4j"
+      ],
+      "id": "architecture",
+      "icon": "layers"
+    },
+    {
+      "title": "Cloud & DevOps",
+      "items": [
+        "Microsoft Azure",
+        "Azure Functions",
+        "GitHub Actions",
+        "Docker",
+        "Jenkins",
+        "Azure APIM",
+        "Azure AKS",
+        "GitOps",
+        "Terraform",
+        "Azure Data Factory",
+        "Databricks"
+      ],
+      "id": "cloud",
+      "icon": "cloud"
+    },
+    {
+      "title": "Data & Messaging",
+      "items": [
+        "Apache Kafka",
+        "SQL Server",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis"
+      ],
+      "id": "data",
+      "icon": "database"
+    },
+    {
+      "title": "Quality & Security",
+      "items": [
+        "JUnit 5",
+        "Mockito",
+        "Karate",
+        "SonarQube",
+        "OAuth 2.0",
+        "OWASP Top 10",
+        "PCI-DSS",
+        "Cornucopia",
+        "Fortify SAST",
+        "JFrog Xray",
+        "JMeter",
+        "k6",
+        "WireMock",
+        "HashiCorp Vault"
+      ],
+      "id": "quality",
+      "icon": "shield"
+    },
+    {
+      "title": "Observability",
+      "items": [
+        "Dynatrace",
+        "Grafana",
+        "Prometheus",
+        "Kibana",
+        "Loki",
+        "Application Insights",
+        "Micrometer",
+        "Distributed Tracing"
+      ],
+      "id": "observability",
+      "icon": "activity"
+    }
+  ],
+  "translations": {
+    "es": {
+      "tag": "Ingeniería de software · Perú",
+      "projects": "Proyectos",
+      "skills": "Tecnologías",
+      "about": "Sobre mí",
+      "hello": "UN POCO DE CÓDIGO. MUCHA CURIOSIDAD.",
+      "title": "Ideas claras.",
+      "title2": "Sistemas sólidos.",
+      "intro": "Backend, cloud y arquitectura. Un espacio para compartir lo que construyo y las ideas detrás del código.",
+      "connect": "Conectemos",
+      "profile": "Software Engineer",
+      "bio": "Construyo software con intención. Java, microservicios y una curiosidad que nunca se apaga.",
+      "location": "Perú",
+      "explore": "Explora mi mundo",
+      "exploreSub": "Código, proyectos y conversaciones. Todo empieza con una conexión.",
+      "github": "Donde las ideas se convierten en código.",
+      "linkedin": "Hablemos de ingeniería y nuevas ideas.",
+      "visit": "Ver perfil",
+      "repositories": "Explorar repositorios",
+      "focus": "MI ENFOQUE",
+      "focusTitle": "Diseñar para evolucionar.",
+      "focusBody": "Resiliencia, seguridad y observabilidad desde la primera línea.",
+      "work": "PROYECTOS SELECCIONADOS",
+      "workTitle": "Del concepto al código.",
+      "all": "Todos",
+      "cloud": "Cloud",
+      "backend": "Backend",
+      "quality": "Calidad",
+      "repo": "Ver repositorio",
+      "stack": "TECNOLOGÍAS & HERRAMIENTAS",
+      "stackTitle": "Las piezas de mi trabajo.",
+      "aboutLabel": "DETRÁS DEL CÓDIGO",
+      "aboutTitle": "Ingeniería con propósito.",
+      "footer": "Hecho con intención y React.",
+      "copy": "Copiar enlace del perfil",
+      "copied": "Enlace copiado",
+      "copyError": "No se pudo copiar el enlace",
+      "go": "Volver al inicio",
+      "connection": "¿Tienes una idea en mente?",
+      "talk": "Conversemos en LinkedIn",
+      "note": "Siempre aprendiendo. Siempre construyendo.",
+      "values": [
+        {
+          "title": "Diseño consciente",
+          "description": "Patrones y principios aplicados cuando aportan valor real al dominio."
+        },
+        {
+          "title": "Confiabilidad",
+          "description": "Sistemas observables, seguros y preparados para fallar con control."
+        },
+        {
+          "title": "Aprendizaje continuo",
+          "description": "Exploro nuevas tecnologías y cuestiono mis propias decisiones."
+        }
+      ],
+      "skipLink": "Saltar al contenido",
+      "navigationLabel": "Navegación principal",
+      "filterLabel": "Filtrar proyectos",
+      "portraitLabel": "Monograma de {name}",
+      "aboutText": "Soy ingeniero de sistemas y Software Engineer Backend, con experiencia en BCP y NTT DATA LATAM. Diseño microservicios reactivos de alta concurrencia con Java, Spring Cloud, Spring WebFlux, RxJava y Quarkus en Azure. Integro seguridad bancaria, DevSecOps, observabilidad y pruebas de rendimiento para construir servicios confiables.",
+      "experience": "Experiencia",
+      "experienceLabel": "TRAYECTORIA PROFESIONAL",
+      "experienceTitle": "Backend en el mundo real.",
+      "experienceDescription": "Microservicios, identidad digital y cloud en entornos bancarios.",
+      "present": "Actualidad",
+      "experienceDetails": "Responsabilidades y tecnología",
+      "experienceProject": "Proyecto destacado",
+      "experienceRecognition": "Reconocimientos",
+      "educationLabel": "FORMACIÓN",
+      "educationDegree": "Ingeniería de Sistemas",
+      "downloadCv": "Descargar CV"
+    },
+    "en": {
+      "tag": "Software engineering · Peru",
+      "projects": "Projects",
+      "skills": "Skills",
+      "about": "About",
+      "hello": "A LITTLE CODE. A LOT OF CURIOSITY.",
+      "title": "Clear ideas.",
+      "title2": "Solid systems.",
+      "intro": "Backend, cloud and architecture. A space for the things I build and the thinking behind the code.",
+      "connect": "Let’s connect",
+      "profile": "Software Engineer",
+      "bio": "Building software with intention. Java, microservices and a curiosity that never switches off.",
+      "location": "Peru",
+      "explore": "Explore my world",
+      "exploreSub": "Code, projects and conversations. It all starts with a connection.",
+      "github": "Where ideas become working code.",
+      "linkedin": "Engineering, conversations and new ideas.",
+      "visit": "View profile",
+      "repositories": "Explore repositories",
+      "focus": "MY APPROACH",
+      "focusTitle": "Designed to evolve.",
+      "focusBody": "Resilience, security and observability from the very first line.",
+      "work": "SELECTED PROJECTS",
+      "workTitle": "From concept to code.",
+      "all": "All",
+      "cloud": "Cloud",
+      "backend": "Backend",
+      "quality": "Quality",
+      "repo": "View repository",
+      "stack": "TECHNOLOGIES & TOOLS",
+      "stackTitle": "The pieces of my work.",
+      "aboutLabel": "BEHIND THE CODE",
+      "aboutTitle": "Engineering with purpose.",
+      "footer": "Made with intention and React.",
+      "copy": "Copy profile link",
+      "copied": "Link copied",
+      "copyError": "Could not copy the link",
+      "go": "Back to top",
+      "connection": "Have an idea in mind?",
+      "talk": "Let’s talk on LinkedIn",
+      "note": "Always learning. Always building.",
+      "values": [
+        {
+          "title": "Intentional design",
+          "description": "Applying patterns and principles when they add real domain value."
+        },
+        {
+          "title": "Reliability",
+          "description": "Observable, secure systems designed for controlled failure."
+        },
+        {
+          "title": "Continuous learning",
+          "description": "Exploring technologies and challenging my own assumptions."
+        }
+      ],
+      "skipLink": "Skip to content",
+      "navigationLabel": "Main navigation",
+      "filterLabel": "Filter projects",
+      "portraitLabel": "Monogram of {name}",
+      "aboutText": "I am a systems engineer and backend software engineer with experience at BCP and NTT DATA LATAM. I design highly concurrent reactive microservices with Java, Spring Cloud, Spring WebFlux, RxJava and Quarkus on Azure. I combine banking security, DevSecOps, observability and performance testing to build reliable services.",
+      "experience": "Experience",
+      "experienceLabel": "PROFESSIONAL JOURNEY",
+      "experienceTitle": "Backend in the real world.",
+      "experienceDescription": "Microservices, digital identity and cloud in banking environments.",
+      "present": "Present",
+      "experienceDetails": "Responsibilities and technology",
+      "experienceProject": "Featured project",
+      "experienceRecognition": "Recognition",
+      "educationLabel": "EDUCATION",
+      "educationDegree": "Systems Engineering",
+      "downloadCv": "Download CV"
+    }
+  },
+  "effects": {
+    "aos": {
+      "duration": 650,
+      "offset": 32,
+      "once": true
+    },
+    "particles": {
+      "mobileBreakpoint": 760,
+      "mobileCount": 26,
+      "config": {
+        "particles": {
+          "number": {
+            "value": 48,
+            "density": {
+              "enable": true,
+              "value_area": 1000
+            }
+          },
+          "color": {
+            "value": [
+              "#efb67e",
+              "#a89ac9",
+              "#729eae"
+            ]
+          },
+          "shape": {
+            "type": "circle"
+          },
+          "opacity": {
+            "value": 0.32,
+            "random": true
+          },
+          "size": {
+            "value": 2,
+            "random": true
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 135,
+            "color": "#a89ac9",
+            "opacity": 0.12,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 0.45,
+            "direction": "none",
+            "random": true,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false
+          }
+        },
+        "interactivity": {
+          "events": {
+            "onhover": {
+              "enable": false
+            },
+            "onclick": {
+              "enable": false
+            },
+            "resize": false
+          }
+        },
+        "retina_detect": false
+      }
+    },
+    "spring": {
+      "enabled": true,
+      "config": {
+        "mass": 1,
+        "tension": 260,
+        "friction": 24
+      },
+      "tiltDegrees": 4,
+      "hoverLift": 5,
+      "pressScale": 0.98,
+      "transitionOffset": 14,
+      "trail": 70,
+      "floatDistance": 5,
+      "floatRotation": 10,
+      "floatDuration": 1800,
+      "floatCycles": 3
+    }
+  },
+  "experience": [
+    {
+      "id": "bcp",
+      "company": "Banco de Crédito del Perú",
+      "initials": "BCP",
+      "startYear": "2024",
+      "endYear": null,
+      "location": "Lima, Perú",
+      "role": "Software Engineer Backend",
+      "tags": [
+        "Java 17+",
+        "Spring WebFlux",
+        "RxJava",
+        "Quarkus",
+        "Azure APIM"
+      ],
+      "content": {
+        "es": {
+          "summary": "Microservicios reactivos y autenticación de identidad digital para canales bancarios, con foco en alta concurrencia, seguridad y disponibilidad.",
+          "highlights": [
+            "Desarrollo de servicios con I/O no bloqueante y gestión eficiente de hilos en Java 17+, Spring WebFlux, RxJava y Quarkus.",
+            "Validación de rendimiento con JMeter y k6, analizando percentiles P95 y P99 para asegurar la estabilidad de los servicios.",
+            "Controles OWASP Top 10 y PCI-DSS; modelado de amenazas con Cornucopia y atención de vulnerabilidades de Ethical Hacking e IriusRisk.",
+            "Contratos API-first con OpenAPI 3.x, publicación en Azure API Management y políticas de rate limit, timeouts y subscription keys."
+          ],
+          "details": [
+            "Análisis estático y de dependencias con Fortify SAST, SonarQube, JFrog Xray y CAST.",
+            "Pipelines en GitHub Actions para automatizar validaciones de despliegue.",
+            "Configuración de GitHub Copilot y agentes LLM personalizados para aplicar estándares de código y nomenclatura.",
+            "Diagnóstico de incidentes de producción con Grafana y Kibana.",
+            "Azure Functions para procesamiento asíncrono y participación en revisiones de arquitectura de soluciones."
+          ],
+          "projectTitle": "Login Único BCP",
+          "projectDescription": "Servicios de autenticación cross-channel para 20 canales digitales del banco, con hasta 500 solicitudes por segundo en producción, alta disponibilidad y tolerancia a fallos. Autenticación con tarjeta y clave, RSA Token, reconocimiento facial y OTP; protección con CAPTCHA, WAF y Azure Front Door frente a DDoS.",
+          "recognition": [
+            "Ganador de una hackatón de Java con una solución basada en microservicios y arquitectura a gran escala.",
+            "Automatización de validaciones de servicios propios y de terceros a partir de tickets de soporte en ambientes preproductivos."
+          ]
+        },
+        "en": {
+          "summary": "Reactive microservices and digital identity authentication for banking channels, focused on high concurrency, security and availability.",
+          "highlights": [
+            "Non-blocking services and efficient thread management with Java 17+, Spring WebFlux, RxJava and Quarkus.",
+            "Performance validation with JMeter and k6, analyzing P95 and P99 percentiles to maintain service stability.",
+            "OWASP Top 10 and PCI-DSS controls; threat modeling with Cornucopia and remediation of Ethical Hacking and IriusRisk findings.",
+            "API-first contracts with OpenAPI 3.x, Azure API Management publishing, and rate limit, timeout and subscription key policies."
+          ],
+          "details": [
+            "Static and dependency analysis with Fortify SAST, SonarQube, JFrog Xray and CAST.",
+            "GitHub Actions pipelines to automate deployment validations.",
+            "GitHub Copilot and custom LLM agent configuration to apply coding and naming standards.",
+            "Production incident diagnosis with Grafana and Kibana.",
+            "Azure Functions for asynchronous processing and participation in solution architecture reviews."
+          ],
+          "projectTitle": "Login Único BCP",
+          "projectDescription": "Cross-channel authentication services for 20 digital banking channels, supporting up to 500 requests per second in production with high availability and fault tolerance. Card and PIN, RSA Token, facial recognition and OTP authentication; CAPTCHA, WAF and Azure Front Door for DDoS protection.",
+          "recognition": [
+            "Winner of a Java hackathon with a microservices solution and large-scale architecture.",
+            "Automated validation of internal and third-party services triggered by support tickets in preproduction environments."
+          ]
+        }
+      }
+    },
+    {
+      "id": "ntt-data",
+      "company": "NTT DATA LATAM",
+      "initials": "NTT",
+      "startYear": "2022",
+      "endYear": "2024",
+      "location": "Lima, Perú",
+      "role": "Java Developer",
+      "tags": [
+        "Spring Boot",
+        "Spring Cloud",
+        "Resilience4j",
+        "AKS",
+        "Dynatrace"
+      ],
+      "content": {
+        "es": {
+          "summary": "APIs resilientes, observabilidad y despliegues cloud, desde el diseño de contratos hasta la operación de microservicios.",
+          "highlights": [
+            "Diseño e implementación de APIs REST con Java, Spring Boot, Spring Cloud y Spring Cloud Gateway.",
+            "Circuit Breaker, Retry y Timeout con Resilience4j; mocking con WireMock para pruebas de integración.",
+            "Contratos API-first con OpenAPI 3.x bajo gobierno de APIs, manteniendo consistencia entre más de 15 microservicios.",
+            "Despliegues en Azure Kubernetes Service: Ingress NGINX, Horizontal Pod Autoscaling, resource quotas y estrategias GitOps."
+          ],
+          "details": [
+            "Dynatrace APM con dashboards personalizados, alertas y diagnóstico de incidentes.",
+            "Integración como cliente de HashiCorp Vault, con rotación automática de credenciales y eliminación de secretos en código.",
+            "Controles antifraude con CAPTCHA para reducir tráfico malicioso y proteger endpoints críticos."
+          ],
+          "projectTitle": "Migración de datos a Azure",
+          "projectDescription": "Participación reconocida en la migración de 20 millones de registros de usuarios desde una base de datos on-premise a cloud mediante un proceso ETL con Azure Data Factory y Databricks.",
+          "recognition": [
+            "Reconocimiento por la migración de datos de usuarios de on-premise a cloud."
+          ]
+        },
+        "en": {
+          "summary": "Resilient APIs, observability and cloud deployments, from contract design to microservice operations.",
+          "highlights": [
+            "REST API design and implementation with Java, Spring Boot, Spring Cloud and Spring Cloud Gateway.",
+            "Circuit Breaker, Retry and Timeout with Resilience4j; WireMock mocking for integration tests.",
+            "API-first contracts with OpenAPI 3.x under API governance, maintaining consistency across more than 15 microservices.",
+            "Azure Kubernetes Service deployments: NGINX Ingress, Horizontal Pod Autoscaling, resource quotas and GitOps strategies."
+          ],
+          "details": [
+            "Dynatrace APM with custom dashboards, alerts and incident diagnosis.",
+            "HashiCorp Vault client integration with automated credential rotation and removal of hardcoded secrets.",
+            "CAPTCHA-based antifraud controls to reduce malicious traffic and protect critical endpoints."
+          ],
+          "projectTitle": "Data migration to Azure",
+          "projectDescription": "Recognized contribution to migrating 20 million user records from an on-premise database to cloud through an ETL process with Azure Data Factory and Databricks.",
+          "recognition": [
+            "Recognition for migrating user data from on-premise to cloud."
+          ]
+        }
+      }
+    }
+  ],
+  "education": {
+    "institution": "Universidad Nacional de San Cristóbal de Huamanga",
+    "location": "Ayacucho, Huamanga",
+    "startYear": "2013",
+    "endYear": "2018"
+  }
+}\n

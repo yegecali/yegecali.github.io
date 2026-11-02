@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+// React Spring owns transform; AOS keeps opacity/translate on scroll.
+// Disable CSS interpolation of transform to avoid a second easing layer.
+.spring-surface {
+  transition-property: opacity, translate, border-color, background-color, color !important;
+  transform-origin: center;
+}
+
+.spring-accent {
+  display: inline-block;
+  animation: none !important;
+}
+
+.intro h2 > .intro-spark {
+  color: #f2ba78;
+  line-height: 1;
+}
+
+.project-motion {
+  display: grid;
+  min-width: 0;
+}
+
+.filters button.spring-filter {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+
+  > .filter-indicator {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    padding: 0;
+    border-radius: inherit;
+    background: #f3ba7b14;
+    pointer-events: none;
+  }
+}
+
+@include reduced-motion {
+  .spring-surface,
+  .spring-accent,
+  .project-motion {
+    transform: none !important;
+  }
+}
