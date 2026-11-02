@@ -33,7 +33,7 @@ jobs:
           const file = 'src/data/portfolio.json';
           const data = JSON.parse(fs.readFileSync(file, 'utf8'));
           data.metadata.siteUrl = 'https://yegecali.github.io/';
-          fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\\n');
+          fs.writeFileSync(file, JSON.stringify(data, null, 2) + String.fromCharCode(10));
           const readme = fs.readFileSync('README.md', 'utf8').replaceAll('https://yegecali.github.io/yegecali/', 'https://yegecali.github.io/').replaceAll('La base de Vite continúa siendo `/yegecali/`', 'La base de Vite es `/`');
           fs.writeFileSync('README.md', readme);
           NODE
