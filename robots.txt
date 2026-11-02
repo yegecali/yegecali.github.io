@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yegecali.github.io/sitemap.xml
