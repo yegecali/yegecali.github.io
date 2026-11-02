@@ -33,7 +33,7 @@ jobs:
           test -s dist/index.html
           test -d dist/assets
           grep -q 'https://yegecali.github.io/' dist/index.html
-      - name: Publish generated static files to main
+      - name: Publish generated static files to main and master
         shell: bash
         run: |
           set -euo pipefail
@@ -41,17 +41,20 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cp -a dist "$RUNNER_TEMP/site"
           touch "$RUNNER_TEMP/site/.nojekyll"
-          git fetch origin main
-          git worktree add --detach "$RUNNER_TEMP/publish" origin/main
-          cd "$RUNNER_TEMP/publish"
-          git rm -rq --ignore-unmatch .
-          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-          cp -a "$RUNNER_TEMP/site/." .
-          git add -A
-          if ! git diff --cached --quiet; then
-            git commit -m "deploy: portfolio from $GITHUB_SHA"
-            git push origin HEAD:main
-          fi
+          for branch in main master; do
+            git fetch origin "$branch"
+            git worktree add --detach "$RUNNER_TEMP/publish-$branch" "origin/$branch"
+            cd "$RUNNER_TEMP/publish-$branch"
+            git rm -rq --ignore-unmatch .
+            find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+            cp -a "$RUNNER_TEMP/site/." .
+            git add -A
+            if ! git diff --cached --quiet; then
+              git commit -m "deploy: portfolio from $GITHUB_SHA"
+              git push origin "HEAD:$branch"
+            fi
+            cd "$GITHUB_WORKSPACE"
+          done
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
