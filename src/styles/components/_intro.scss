@@ -19,8 +19,8 @@
 
 .intro-spark {
   position: absolute;
-  right: -59px;
-  top: 5px;
+  right: 0;
+  top: -28px;
   color: #f2ba78;
   transform: rotate(10deg);
 }
@@ -29,7 +29,7 @@
   color: var(--text-secondary, #999fb5);
   font-size: 15px;
   line-height: 1.85;
-  max-width: 450px;
+  max-width: 560px;
 }
 
 @include up(wide) {
@@ -44,39 +44,14 @@
   }
 
   .intro-spark {
-    right: -41px;
+    right: 0;
     width: 24px;
   }
 }
 
+// The mobile profile card contains the complete introduction and both actions.
 @include down(mobile) {
   .intro {
-    margin: 0 0 37px;
-  }
-
-  .intro h2 {
-    font-size: clamp(38px, 10.8vw, 47px);
-    letter-spacing: -2px;
-  }
-
-  .intro > p:last-child {
-    font-size: 15px;
-  }
-
-  .intro-spark {
-    right: 0;
-    top: -16px;
-  }
-}
-
-@include down(small) {
-  .intro h2 {
-    font-size: 41px;
-  }
-
-  .intro-spark {
-    right: 0;
-    top: -16px;
-    width: 22px;
+    display: none;
   }
 }

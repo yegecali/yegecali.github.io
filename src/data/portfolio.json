@@ -99,9 +99,6 @@
     "about": {
       "marker": "05 — HUMAN"
     },
-    "contact": {
-      "eyebrow": "LET’S MAKE IT HAPPEN"
-    },
     "experience": {
       "marker": "02 — EXPERIENCE"
     }
@@ -303,13 +300,13 @@
       "projects": "Proyectos",
       "skills": "Tecnologías",
       "about": "Sobre mí",
-      "hello": "UN POCO DE CÓDIGO. MUCHA CURIOSIDAD.",
-      "title": "Ideas claras.",
-      "title2": "Sistemas sólidos.",
-      "intro": "Backend, cloud y arquitectura. Un espacio para compartir lo que construyo y las ideas detrás del código.",
+      "hello": "Hola, soy",
+      "title": "Backend con Java.",
+      "title2": "Soluciones en la nube.",
+      "intro": "Soy ingeniero de sistemas con experiencia en BCP y NTT DATA LATAM. Diseño APIs y microservicios reactivos con Java y Spring, e integro soluciones en Azure con foco en seguridad, rendimiento y confiabilidad.",
       "connect": "Conectemos",
-      "profile": "Software Engineer",
-      "bio": "Construyo software con intención. Java, microservicios y una curiosidad que nunca se apaga.",
+      "profile": "Ingeniero de Software Backend",
+      "bio": "Soy ingeniero de sistemas con experiencia en BCP y NTT DATA LATAM. Me especializo en backend con Java, microservicios y Azure.",
       "location": "Perú",
       "explore": "Explora mi mundo",
       "exploreSub": "Código, proyectos y conversaciones. Todo empieza con una conexión.",
@@ -377,20 +374,23 @@
       "themeDark": "Oscuro",
       "themeToLight": "Activar tema claro",
       "themeToDark": "Activar tema oscuro",
-      "themeUseSystem": "Usar tema del sistema"
+      "themeUseSystem": "Usar tema del sistema",
+      "capabilities": "Diseño APIs y microservicios reactivos, integro servicios en la nube y construyo soluciones seguras, observables y preparadas para alta concurrencia.",
+      "learnMore": "¿Quieres conocer más de mí?",
+      "contactLabel": "HAGÁMOSLO REALIDAD"
     },
     "en": {
       "tag": "Software engineering · Peru",
       "projects": "Projects",
       "skills": "Skills",
       "about": "About",
-      "hello": "A LITTLE CODE. A LOT OF CURIOSITY.",
-      "title": "Clear ideas.",
-      "title2": "Solid systems.",
-      "intro": "Backend, cloud and architecture. A space for the things I build and the thinking behind the code.",
+      "hello": "Hi, I’m",
+      "title": "Java backend.",
+      "title2": "Cloud solutions.",
+      "intro": "I am a systems engineer with experience at BCP and NTT DATA LATAM. I design APIs and reactive microservices with Java and Spring, and integrate Azure solutions with a focus on security, performance and reliability.",
       "connect": "Let’s connect",
-      "profile": "Software Engineer",
-      "bio": "Building software with intention. Java, microservices and a curiosity that never switches off.",
+      "profile": "Backend Software Engineer",
+      "bio": "I am a systems engineer with experience at BCP and NTT DATA LATAM. I specialize in Java backend development, microservices and Azure.",
       "location": "Peru",
       "explore": "Explore my world",
       "exploreSub": "Code, projects and conversations. It all starts with a connection.",
@@ -458,7 +458,10 @@
       "themeDark": "Dark",
       "themeToLight": "Switch to light theme",
       "themeToDark": "Switch to dark theme",
-      "themeUseSystem": "Use system theme"
+      "themeUseSystem": "Use system theme",
+      "capabilities": "I design APIs and reactive microservices, integrate cloud services and build secure, observable solutions for highly concurrent workloads.",
+      "learnMore": "Want to know more about me?",
+      "contactLabel": "LET’S MAKE IT HAPPEN"
     }
   },
   "effects": {

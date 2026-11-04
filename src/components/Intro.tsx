@@ -3,12 +3,12 @@ import { usePortfolio } from '../context/PortfolioContext'
 import FloatingAccent from './motion/FloatingAccent'
 
 export default function Intro() {
-  const { t } = usePortfolio()
+  const { data, t } = usePortfolio()
   return (
-    <section className="intro" data-aos="portfolio-up">
+    <section className="intro" aria-label={`${t.hello} ${data.profile.name}`}>
       <p className="eyebrow">
         <span />
-        {t.hello}
+        {t.hello} {data.profile.name}
       </p>
       <h2>
         {t.title}

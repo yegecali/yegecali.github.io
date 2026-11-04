@@ -10,7 +10,7 @@
   grid-template-columns: 300px minmax(0, 1fr);
   gap: 60px;
   align-items: start;
-  padding: 64px 0 80px;
+  padding: 28px 0 80px;
 }
 
 .content-section {
@@ -49,8 +49,8 @@
   .layout {
     display: flex;
     flex-direction: column;
-    gap: 42px;
-    padding-top: 38px;
+    gap: 24px;
+    padding-top: 18px;
     padding-bottom: 45px;
   }
 

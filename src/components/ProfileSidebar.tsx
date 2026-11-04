@@ -12,11 +12,7 @@ export default function ProfileSidebar() {
   const { status, copy } = useClipboard()
   return (
     <aside className="profile-wrap">
-      <div
-        className="portrait"
-        data-aos="portfolio-up"
-        aria-label={t.portraitLabel.replace('{name}', profile.name)}
-      >
+      <div className="portrait" aria-label={t.portraitLabel.replace('{name}', profile.name)}>
         <span className="portrait-grid" />
         <span className="portrait-code">{monogram.code}</span>
         <span className="monogram">
@@ -29,7 +25,7 @@ export default function ProfileSidebar() {
           ✳
         </FloatingAccent>
       </div>
-      <div className="profile-card" data-aos="portfolio-up">
+      <div className="profile-card">
         <span className="profile-status">
           <i />
           {t.tag}
@@ -44,6 +40,7 @@ export default function ProfileSidebar() {
         </ExternalLink>
         <p className="role">{t.profile}</p>
         <p className="bio">{t.bio}</p>
+        <p className="profile-capabilities">{t.capabilities}</p>
         <div className="profile-meta">
           <span>
             <Icon name="map-pin" size={15} />
@@ -62,6 +59,10 @@ export default function ProfileSidebar() {
           <Icon name="download" size={18} />
           <span>{t.downloadCv}</span>
           <span className="download-cv-format">PDF</span>
+        </a>
+        <a className="profile-learn-more" href="#about">
+          {t.learnMore}
+          <Icon name="arrow-right" size={16} />
         </a>
         <div className="profile-divider" />
         <div className="profile-bottom">
