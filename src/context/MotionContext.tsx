@@ -17,7 +17,9 @@ export function MotionProvider({ children }: { children: ReactNode }) {
   }, [])
 
   return (
-    <MotionContext.Provider value={{ reducedMotion: !data.effects.spring.enabled || Boolean(preference), pageVisible }}>
+    <MotionContext.Provider
+      value={{ reducedMotion: !data.effects.spring.enabled || Boolean(preference), pageVisible }}
+    >
       {children}
     </MotionContext.Provider>
   )

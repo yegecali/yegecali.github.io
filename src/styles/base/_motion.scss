@@ -4,7 +4,10 @@
 .project-card,
 .focus-card,
 .skill-card {
-  transition: transform 240ms ease, border-color 240ms ease, background-color 240ms ease;
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    background-color 240ms ease;
 }
 
 .connect,
@@ -12,15 +15,18 @@
 .copy-button,
 .profile-socials a,
 .filters button,
-footer>a:last-child {
-  transition: transform 200ms ease, color 200ms ease, background-color 200ms ease;
+footer > a:last-child {
+  transition:
+    transform 200ms ease,
+    color 200ms ease,
+    background-color 200ms ease;
 }
 
 .card-link svg,
 .repo-link svg,
-.card-top>svg,
-.focus-card>svg,
-.connect>svg,
+.card-top > svg,
+.focus-card > svg,
+.connect > svg,
 .contact a svg {
   transition: transform 240ms ease;
 }
@@ -59,12 +65,12 @@ footer>a:last-child {
   transform: translate(3px, -2px);
 }
 
-.project-art>svg {
-  transition: transform 380ms cubic-bezier(.2, .7, .3, 1);
+.project-art > svg {
+  transition: transform 380ms cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
 .monogram {
-  transition: transform 500ms cubic-bezier(.2, .7, .3, 1);
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
 .portrait::after {
@@ -101,17 +107,17 @@ footer>a:last-child {
 
   .social-card:hover .card-link svg,
   .project-card:hover .repo-link svg,
-  .focus-card:hover>svg,
-  .connect:hover>svg,
+  .focus-card:hover > svg,
+  .connect:hover > svg,
   .contact a:hover svg {
     transform: translate(3px, -2px);
   }
 
-  .social-card:hover .card-top>svg {
+  .social-card:hover .card-top > svg {
     transform: translate(2px, -2px);
   }
 
-  .project-card:hover .project-art>svg {
+  .project-card:hover .project-art > svg {
     transform: translateY(-4px) scale(1.08);
   }
 
@@ -131,7 +137,7 @@ footer>a:last-child {
   .connect:hover,
   .copy-button:hover,
   .profile-socials a:hover,
-  footer>a:last-child:hover {
+  footer > a:last-child:hover {
     transform: translateY(-2px);
   }
 
@@ -164,7 +170,7 @@ footer>a:last-child {
   .project-card:hover,
   .focus-card:hover,
   .skill-card:hover,
-  .project-card:hover .project-art>svg {
+  .project-card:hover .project-art > svg {
     transform: none;
   }
 

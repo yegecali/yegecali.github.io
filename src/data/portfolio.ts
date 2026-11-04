@@ -41,6 +41,10 @@ export const portfolioData: PortfolioData = {
     descriptionKey: textKey(item.descriptionKey),
     actionKey: textKey(item.actionKey),
   })),
-  projects: source.projects.map(item => ({ ...item, icon: oneOf(iconNames, item.icon), tone: oneOf(projectTones, item.tone) })),
+  projects: source.projects.map(item => ({
+    ...item,
+    icon: oneOf(iconNames, item.icon),
+    tone: oneOf(projectTones, item.tone),
+  })),
   skills: source.skills.map(item => ({ ...item, icon: oneOf(iconNames, item.icon) })),
 }

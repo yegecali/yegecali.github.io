@@ -1,4 +1,3 @@
-
 interface SectionHeadingProps {
   eyebrow?: string
   title: string
@@ -10,7 +9,14 @@ export default function SectionHeading({ eyebrow, title, marker, titleId }: Sect
   const heading = <h2 id={titleId}>{title}</h2>
   return (
     <div className="section-top" data-aos="portfolio-up">
-      {eyebrow ? <div><span className="eyebrow">{eyebrow}</span>{heading}</div> : heading}
+      {eyebrow ? (
+        <div>
+          <span className="eyebrow">{eyebrow}</span>
+          {heading}
+        </div>
+      ) : (
+        heading
+      )}
       <span>{marker}</span>
     </div>
   )

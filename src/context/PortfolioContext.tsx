@@ -1,7 +1,14 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import type { Dispatch, ReactNode, SetStateAction } from 'react'
 import { isLanguage, portfolioData } from '../data/portfolio'
-import type { Language, LanguageOption, PortfolioData, Project, Social, Translation } from '../types/portfolio'
+import type {
+  Language,
+  LanguageOption,
+  PortfolioData,
+  Project,
+  Social,
+  Translation,
+} from '../types/portfolio'
 
 interface PortfolioContextValue {
   data: PortfolioData
@@ -27,16 +34,22 @@ interface PortfolioProviderProps {
 const PortfolioContext = createContext<PortfolioContextValue | null>(null)
 
 // Load the JSON before rendering so every section has the full data immediately.
-export function PortfolioProvider({ children, data = portfolioData, initialLanguage = data.defaultLanguage }: PortfolioProviderProps) {
-  const [language, setLanguage] = useState<Language>(() => (
-    isLanguage(initialLanguage) ? initialLanguage : data.defaultLanguage
-  ))
+export function PortfolioProvider({
+  children,
+  data = portfolioData,
+  initialLanguage = data.defaultLanguage,
+}: PortfolioProviderProps) {
+  const [language, setLanguage] = useState<Language>(() =>
+    isLanguage(initialLanguage) ? initialLanguage : data.defaultLanguage,
+  )
   const [filter, setFilter] = useState('all')
 
   useEffect(() => {
     document.documentElement.lang = language
     document.title = data.metadata.title
-    document.querySelector('meta[name="description"]')?.setAttribute('content', data.metadata.description[language])
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute('content', data.metadata.description[language])
   }, [data, language])
 
   const value = useMemo<PortfolioContextValue>(() => {
@@ -46,7 +59,8 @@ export function PortfolioProvider({ children, data = portfolioData, initialLangu
     const socials = Object.fromEntries(data.socials.map(social => [social.id, social]))
     const primarySocial = socials[data.profile.primarySocial]
     const contactSocial = socials[data.profile.contactSocial]
-    if (!primarySocial || !contactSocial) throw new Error('Portfolio social references must match an existing social ID')
+    if (!primarySocial || !contactSocial)
+      throw new Error('Portfolio social references must match an existing social ID')
     return {
       data,
       language,

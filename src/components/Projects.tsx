@@ -19,10 +19,20 @@ interface ProjectCardProps {
 
 function ProjectCard({ project, index, categoryLabel, language, t, leaving }: ProjectCardProps) {
   return (
-    <SpringLink href={project.url} className={`project-card project-${project.tone}`} tabIndex={leaving ? -1 : 0}>
+    <SpringLink
+      href={project.url}
+      className={`project-card project-${project.tone}`}
+      tabIndex={leaving ? -1 : 0}
+    >
       <div className="project-visual">
-        <span className="project-number">{String(index + 1).padStart(2, '0')} / {categoryLabel}</span>
-        <div className="project-art"><span /><Icon name={project.icon} size={43} strokeWidth={1.2} /><span /></div>
+        <span className="project-number">
+          {String(index + 1).padStart(2, '0')} / {categoryLabel}
+        </span>
+        <div className="project-art">
+          <span />
+          <Icon name={project.icon} size={43} strokeWidth={1.2} />
+          <span />
+        </div>
         <span className="visual-caption">{project.displayName}</span>
         <Icon name="arrow-up-right" size={18} />
       </div>
@@ -30,7 +40,10 @@ function ProjectCard({ project, index, categoryLabel, language, t, leaving }: Pr
         <h3>{project.name}</h3>
         <p>{project.description[language]}</p>
         <Tags items={project.tags} />
-        <span className="repo-link">{t.repo}<Icon name="arrow-up-right" size={13} /></span>
+        <span className="repo-link">
+          {t.repo}
+          <Icon name="arrow-up-right" size={13} />
+        </span>
       </div>
     </SpringLink>
   )
@@ -60,7 +73,8 @@ export default function Projects() {
       <div className="filters" role="group" aria-label={t.filterLabel}>
         {data.projectFilters.map(item => (
           <FilterButton key={item.id} active={filter === item.id} onClick={() => setFilter(item.id)}>
-            {t[item.labelKey]}{item.id === 'all' && <span>{String(data.projects.length).padStart(2, '0')}</span>}
+            {t[item.labelKey]}
+            {item.id === 'all' && <span>{String(data.projects.length).padStart(2, '0')}</span>}
           </FilterButton>
         ))}
       </div>
@@ -68,8 +82,19 @@ export default function Projects() {
         {transitions((style, project, _state, index) => {
           const leaving = !visibleProjects.some(item => item.id === project.id)
           return (
-            <animated.div className="project-motion" style={{ ...style, pointerEvents: leaving ? 'none' : 'auto' }} aria-hidden={leaving ? true : undefined}>
-              <ProjectCard project={project} index={index} categoryLabel={categoryLabels[project.category] ?? project.category} language={language} t={t} leaving={leaving} />
+            <animated.div
+              className="project-motion"
+              style={{ ...style, pointerEvents: leaving ? 'none' : 'auto' }}
+              aria-hidden={leaving ? true : undefined}
+            >
+              <ProjectCard
+                project={project}
+                index={index}
+                categoryLabel={categoryLabels[project.category] ?? project.category}
+                language={language}
+                t={t}
+                leaving={leaving}
+              />
             </animated.div>
           )
         })}

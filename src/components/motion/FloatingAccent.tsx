@@ -4,14 +4,25 @@ import { animated, easings, useSpring } from '@react-spring/web'
 import { usePortfolio } from '../../context/PortfolioContext'
 import { useMotion } from '../../context/MotionContext'
 
-export default function FloatingAccent({ children, className, delay = 0 }: { children: ReactNode; className: string; delay?: number }) {
+export default function FloatingAccent({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: ReactNode
+  className: string
+  delay?: number
+}) {
   const { data } = usePortfolio()
   const settings = data.effects.spring
   const { reducedMotion, pageVisible } = useMotion()
   const [style, api] = useSpring(() => ({ y: 0, rotateZ: 0 }), [])
 
   useEffect(() => {
-    if (reducedMotion) { api.set({ y: 0, rotateZ: 0 }); return }
+    if (reducedMotion) {
+      api.set({ y: 0, rotateZ: 0 })
+      return
+    }
     void api.start({
       delay,
       config: { duration: settings.floatDuration, easing: easings.easeInOutSine },
@@ -22,7 +33,9 @@ export default function FloatingAccent({ children, className, delay = 0 }: { chi
         }
       },
     })
-    return () => { api.stop(true) }
+    return () => {
+      api.stop(true)
+    }
   }, [api, delay, reducedMotion, settings])
 
   useEffect(() => {
@@ -30,5 +43,9 @@ export default function FloatingAccent({ children, className, delay = 0 }: { chi
     else api.pause()
   }, [api, pageVisible])
 
-  return <animated.span className={`${className} spring-accent`} style={style} aria-hidden="true">{children}</animated.span>
+  return (
+    <animated.span className={`${className} spring-accent`} style={style} aria-hidden="true">
+      {children}
+    </animated.span>
+  )
 }

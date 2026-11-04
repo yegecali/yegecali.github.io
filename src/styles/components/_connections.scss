@@ -16,7 +16,9 @@
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid #ffffff0a;
-  transition: transform .2s, border-color .2s;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
 }
 
 .social-card:hover {
@@ -25,7 +27,8 @@
 }
 
 .github-card {
-  background: radial-gradient(ellipse at 0 0, #45445070, transparent 70%), linear-gradient(140deg, #242332, #12101e);
+  background:
+    radial-gradient(ellipse at 0 0, #45445070, transparent 70%), linear-gradient(140deg, #242332, #12101e);
 }
 
 .linkedin-card {
@@ -48,7 +51,7 @@
 .social-card h3 {
   font: 600 24px $font-heading;
   margin: 6px 0 9px;
-  letter-spacing: -.6px;
+  letter-spacing: -0.6px;
 }
 
 .social-card p {
@@ -119,7 +122,7 @@
   line-height: 1.7;
 }
 
-.focus-card>svg {
+.focus-card > svg {
   margin-left: auto;
   flex-shrink: 0;
   color: #c0aed9;

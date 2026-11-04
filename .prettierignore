@@ -1,0 +1,5 @@
+dist
+.prerender
+node_modules
+src/data/portfolio.json
+README.md

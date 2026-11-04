@@ -6,7 +6,9 @@ export default function About() {
   return (
     <section id="about" className="content-section">
       <SectionHeading eyebrow={t.aboutLabel} title={t.aboutTitle} marker={data.sections.about.marker} />
-      <p className="about-text" data-aos="portfolio-up">{t.aboutText}</p>
+      <p className="about-text" data-aos="portfolio-up">
+        {t.aboutText}
+      </p>
       <div className="values">
         {t.values.map((value, index) => (
           <article key={value.title} data-aos="portfolio-up" data-aos-delay={index * 100}>

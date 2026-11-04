@@ -9,7 +9,9 @@ if (!root) throw new Error('Missing root element')
 
 const app = (
   <React.StrictMode>
-    <PortfolioProvider><App /></PortfolioProvider>
+    <PortfolioProvider>
+      <App />
+    </PortfolioProvider>
   </React.StrictMode>
 )
 

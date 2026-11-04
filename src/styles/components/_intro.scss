@@ -13,7 +13,7 @@
   width: fit-content;
 }
 
-.intro h2>span {
+.intro h2 > span {
   color: $text-muted;
 }
 
@@ -25,7 +25,7 @@
   transform: rotate(10deg);
 }
 
-.intro>p:last-child {
+.intro > p:last-child {
   color: #999fb5;
   font-size: 13px;
   line-height: 1.85;
@@ -59,7 +59,7 @@
     letter-spacing: -2px;
   }
 
-  .intro>p:last-child {
+  .intro > p:last-child {
     font-size: 13px;
   }
 

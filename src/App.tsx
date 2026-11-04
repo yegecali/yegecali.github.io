@@ -15,7 +15,11 @@ import Footer from './components/Footer'
 import { MotionProvider } from './context/MotionContext'
 
 export default function App() {
-  return <MotionProvider><PortfolioPage /></MotionProvider>
+  return (
+    <MotionProvider>
+      <PortfolioPage />
+    </MotionProvider>
+  )
 }
 
 function PortfolioPage() {
@@ -26,7 +30,9 @@ function PortfolioPage() {
   return (
     <div id="top" className="site-shell" ref={rootRef}>
       <ParticlesBackground />
-      <a href="#main" className="skip-link">{t.skipLink}</a>
+      <a href="#main" className="skip-link">
+        {t.skipLink}
+      </a>
       <Header />
       <main id="main" className="layout">
         <ProfileSidebar />

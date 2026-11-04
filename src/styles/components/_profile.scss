@@ -41,7 +41,7 @@
   margin: 19px -12px 8px;
 }
 
-.profile-card h1>span {
+.profile-card h1 > span {
   color: $accent;
 }
 
@@ -131,7 +131,7 @@
   margin-top: 23px;
 }
 
-.sidebar-note>span {
+.sidebar-note > span {
   width: 4px;
   height: 4px;
   border-radius: 50%;
@@ -215,8 +215,12 @@
   font-size: 13px;
   font-weight: 700;
 
-  &:hover { background: #ffc994; }
-  > svg { flex-shrink: 0; }
+  &:hover {
+    background: #ffc994;
+  }
+  > svg {
+    flex-shrink: 0;
+  }
 }
 
 .download-cv-format {

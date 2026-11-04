@@ -4,7 +4,7 @@
   color: #9399af;
 }
 
-.eyebrow>span {
+.eyebrow > span {
   width: 5px;
   height: 5px;
   background: #e7b377;
@@ -32,11 +32,11 @@
 
 .section-top h2 {
   font: 500 23px $font-heading;
-  letter-spacing: -.6px;
+  letter-spacing: -0.6px;
   margin: 0;
 }
 
-.section-top>span {
+.section-top > span {
   font-family: monospace;
   font-size: 8px;
   letter-spacing: 1px;
@@ -90,7 +90,7 @@
 }
 
 @include down(tablet) {
-  .section-top>span {
+  .section-top > span {
     font-size: 7px;
   }
 }
@@ -111,7 +111,7 @@
 }
 
 @include down(small) {
-  .section-top>span {
+  .section-top > span {
     display: none;
   }
 }

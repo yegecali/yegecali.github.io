@@ -5,7 +5,12 @@ import type { AosConfig, Language } from '../types/portfolio'
 
 let initialized = false
 
-export default function useAos(rootRef: RefObject<HTMLElement>, filter: string, language: Language, options: AosConfig) {
+export default function useAos(
+  rootRef: RefObject<HTMLElement>,
+  filter: string,
+  language: Language,
+  options: AosConfig,
+) {
   useEffect(() => {
     // AOS has global listeners and no destroy API; initialize it once,
     // including when React StrictMode remounts effects in development.

@@ -1,6 +1,19 @@
 import {
-  LuActivity, LuArrowRight, LuArrowUpRight, LuCheck, LuCloud, LuCodeXml,
-  LuCopy, LuDatabase, LuDownload, LuGlobe, LuLayers3, LuMapPin, LuShieldCheck, LuSparkles, LuTerminal,
+  LuActivity,
+  LuArrowRight,
+  LuArrowUpRight,
+  LuCheck,
+  LuCloud,
+  LuCodeXml,
+  LuCopy,
+  LuDatabase,
+  LuDownload,
+  LuGlobe,
+  LuLayers3,
+  LuMapPin,
+  LuShieldCheck,
+  LuSparkles,
+  LuTerminal,
 } from 'react-icons/lu'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import type { IconBaseProps, IconType } from 'react-icons'

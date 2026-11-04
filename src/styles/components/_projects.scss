@@ -30,7 +30,7 @@
   background: #f3ba7b14;
 }
 
-.filters button>span {
+.filters button > span {
   font-size: 8px;
   background: #f7b2691a;
   padding: 3px 5px;
@@ -48,7 +48,9 @@
   border-radius: 17px;
   overflow: hidden;
   background: #111522;
-  transition: transform .2s, border-color .2s;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
 }
 
 .project-visual {
@@ -78,15 +80,15 @@
   color: #a2d5cd;
 }
 
-.project-art>span {
+.project-art > span {
   width: 32px;
   height: 1px;
   background: currentColor;
-  opacity: .4;
+  opacity: 0.4;
   position: relative;
 }
 
-.project-art>span:after {
+.project-art > span:after {
   content: '';
   position: absolute;
   width: 5px;
@@ -113,7 +115,7 @@
   color: #b4c9c9;
 }
 
-.project-visual>svg {
+.project-visual > svg {
   position: absolute;
   right: 17px;
   bottom: 17px;
@@ -178,7 +180,7 @@
     gap: 9px;
   }
 
-  .project-art>span {
+  .project-art > span {
     width: 21px;
   }
 
