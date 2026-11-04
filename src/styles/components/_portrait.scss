@@ -71,13 +71,26 @@
 
 @include down(mobile) {
   .portrait {
-    width: 200px;
-    height: 200px;
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    width: 72px;
+    height: 72px;
+    border: 2px solid #111522;
+    border-radius: 17px;
+    pointer-events: none;
   }
 
   .monogram {
-    font-size: 92px;
-    left: 16px;
-    top: 44px;
+    font-size: 36px;
+    letter-spacing: -6px;
+    left: 6px;
+    top: 18px;
+  }
+
+  .portrait-code,
+  .portrait-caption,
+  .portrait-star {
+    display: none;
   }
 }

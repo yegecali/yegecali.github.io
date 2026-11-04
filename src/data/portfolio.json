@@ -355,6 +355,8 @@
       ],
       "skipLink": "Saltar al contenido",
       "navigationLabel": "Navegación principal",
+      "openMenu": "Abrir menú",
+      "closeMenu": "Cerrar menú",
       "filterLabel": "Filtrar proyectos",
       "portraitLabel": "Monograma de {name}",
       "aboutText": "Soy ingeniero de sistemas y Software Engineer Backend, con experiencia en BCP y NTT DATA LATAM. Diseño microservicios reactivos de alta concurrencia con Java, Spring Cloud, Spring WebFlux, RxJava y Quarkus en Azure. Integro seguridad bancaria, DevSecOps, observabilidad y pruebas de rendimiento para construir servicios confiables.",
@@ -368,7 +370,14 @@
       "experienceRecognition": "Reconocimientos",
       "educationLabel": "FORMACIÓN",
       "educationDegree": "Ingeniería de Sistemas",
-      "downloadCv": "Descargar CV"
+      "downloadCv": "Descargar CV",
+      "themeLabel": "Tema de color",
+      "themeSystem": "Sistema",
+      "themeLight": "Claro",
+      "themeDark": "Oscuro",
+      "themeToLight": "Activar tema claro",
+      "themeToDark": "Activar tema oscuro",
+      "themeUseSystem": "Usar tema del sistema"
     },
     "en": {
       "tag": "Software engineering · Peru",
@@ -427,6 +436,8 @@
       ],
       "skipLink": "Skip to content",
       "navigationLabel": "Main navigation",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
       "filterLabel": "Filter projects",
       "portraitLabel": "Monogram of {name}",
       "aboutText": "I am a systems engineer and backend software engineer with experience at BCP and NTT DATA LATAM. I design highly concurrent reactive microservices with Java, Spring Cloud, Spring WebFlux, RxJava and Quarkus on Azure. I combine banking security, DevSecOps, observability and performance testing to build reliable services.",
@@ -440,7 +451,14 @@
       "experienceRecognition": "Recognition",
       "educationLabel": "EDUCATION",
       "educationDegree": "Systems Engineering",
-      "downloadCv": "Download CV"
+      "downloadCv": "Download CV",
+      "themeLabel": "Color theme",
+      "themeSystem": "System",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "themeToLight": "Switch to light theme",
+      "themeToDark": "Switch to dark theme",
+      "themeUseSystem": "Use system theme"
     }
   },
   "effects": {
@@ -653,5 +671,19 @@
     "location": "Ayacucho, Huamanga",
     "startYear": "2013",
     "endYear": "2018"
+  },
+  "appearance": {
+    "defaultMode": "system",
+    "storageKey": "yemi-portfolio-theme",
+    "browserColors": {
+      "dark": "#090c16",
+      "light": "#f7f4ee"
+    },
+    "lightParticleColors": [
+      "#9b632e",
+      "#807196",
+      "#477f86"
+    ],
+    "lightParticleLine": "#9393a4"
   }
 }

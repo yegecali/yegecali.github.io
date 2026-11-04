@@ -1,5 +1,6 @@
 import type { HtmlTagDescriptor, Plugin } from 'vite'
 import { portfolioData as data } from '../src/data/portfolio'
+import { createThemeBootstrap } from '../src/lib/theme'
 
 const entities: Record<string, string> = {
   '&': '&amp;',
@@ -69,7 +70,13 @@ export function seoPlugin(): Plugin {
         { tag: 'link', attrs: { rel: 'icon', type: 'image/svg+xml', href: `${siteBase}favicon.svg` } },
         meta('robots', 'index, follow, max-image-preview:large'),
         meta('author', data.profile.name),
-        meta('theme-color', data.metadata.themeColor),
+        { ...meta('theme-color', data.metadata.themeColor), injectTo: 'head-prepend' },
+        {
+          tag: 'script',
+          attrs: { id: 'portfolio-theme-init' },
+          children: createThemeBootstrap(data.appearance),
+          injectTo: 'head-prepend',
+        },
         og('og:type', 'website'),
         og('og:title', data.metadata.title),
         og('og:description', description),

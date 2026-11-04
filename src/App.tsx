@@ -13,12 +13,15 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import { MotionProvider } from './context/MotionContext'
+import { ThemeProvider } from './context/ThemeContext'
 
 export default function App() {
   return (
-    <MotionProvider>
-      <PortfolioPage />
-    </MotionProvider>
+    <ThemeProvider>
+      <MotionProvider>
+        <PortfolioPage />
+      </MotionProvider>
+    </ThemeProvider>
   )
 }
 

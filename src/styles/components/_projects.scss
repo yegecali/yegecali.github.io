@@ -2,11 +2,12 @@
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: #b69d794a;
+  border-color: var(--border-hover, #b69d794a);
 }
 
 .filters {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   margin: 24px 0 21px;
   border-bottom: 1px solid $border-subtle;
@@ -17,29 +18,30 @@
   display: flex;
   gap: 8px;
   align-items: center;
+  min-height: 44px;
   border: 0;
   background: transparent;
-  color: #8b92aa;
-  font-size: 11px;
+  color: var(--text-quiet, #8b92aa);
+  font-size: 13px;
   padding: 9px 13px;
   border-radius: 8px;
 }
 
 .filters button.active {
-  color: #f5d4a9;
-  background: #f3ba7b14;
+  color: var(--accent-text, #f5d4a9);
+  background: var(--filter-background, #f3ba7b14);
 }
 
 .filters button > span {
-  font-size: 8px;
-  background: #f7b2691a;
+  font-size: 11px;
+  background: var(--filter-background, #f7b2691a);
   padding: 3px 5px;
   border-radius: 3px;
 }
 
 .project-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -47,7 +49,7 @@
   border: 1px solid $border-subtle;
   border-radius: 17px;
   overflow: hidden;
-  background: #111522;
+  background: var(--card-background, #111522);
   transition:
     transform 0.2s,
     border-color 0.2s;
@@ -62,7 +64,7 @@
 }
 
 .project-number {
-  font: 8px monospace;
+  font: 11px monospace;
   letter-spacing: 1px;
   color: #9abbb9;
   text-transform: uppercase;
@@ -111,7 +113,7 @@
 .visual-caption {
   position: absolute;
   bottom: 18px;
-  font: 11px $font-heading;
+  font: 12px $font-heading;
   color: #b4c9c9;
 }
 
@@ -127,25 +129,24 @@
 }
 
 .project-copy h3 {
-  font: 500 13px $font-heading;
+  font: 500 17px/1.4 $font-heading;
   overflow-wrap: anywhere;
   margin: 0 0 10px;
 }
 
 .project-copy p {
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.85;
-  color: #959db4;
+  color: var(--text-secondary, #959db4);
   margin: 0 0 16px;
-  min-height: 55px;
 }
 
 .repo-link {
   display: flex;
   gap: 6px;
   align-items: center;
-  font-size: 9px;
-  color: #d0c7be;
+  font-size: 13px;
+  color: var(--accent-text, #d0c7be);
   margin-top: 22px;
 }
 
@@ -159,12 +160,8 @@
   }
 
   .project-copy h3 {
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .project-copy p {
-    min-height: 74px;
+    font-size: 17px;
+    line-height: 1.4;
   }
 
   .project-visual {
@@ -173,7 +170,7 @@
   }
 
   .project-number {
-    font-size: 7px;
+    font-size: 11px;
   }
 
   .project-art {
@@ -185,19 +182,17 @@
   }
 
   .visual-caption {
-    font-size: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @include down(small) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-copy p {
-    min-height: 0;
-  }
-
   .filters button {
     padding: 8px 10px;
   }

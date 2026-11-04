@@ -2,7 +2,7 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-top: 25px;
 }
@@ -11,7 +11,7 @@
   padding: 21px;
   border: 1px solid $border-subtle;
   border-radius: 16px;
-  background: #13172466;
+  background: var(--card-background, #13172466);
 }
 
 .skill-card > svg {
@@ -19,7 +19,7 @@
 }
 
 .skill-card h3 {
-  font: 500 12px $font-heading;
+  font: 500 15px/1.4 $font-heading;
   margin: 13px 0 16px;
 }
 
@@ -31,7 +31,7 @@
   border: 0;
   padding: 3px 0;
   margin-right: 7px;
-  font-size: 9px;
+  font-size: 12px;
   background: none;
 }
 
@@ -42,5 +42,11 @@
 
   .skill-card {
     padding: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }

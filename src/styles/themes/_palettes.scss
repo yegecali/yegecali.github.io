@@ -1,0 +1,63 @@
+// Runtime tokens keep all component files shared between both themes.
+@mixin light-palette {
+  color-scheme: light;
+  --page-background: #f7f4ee;
+  --page-glow:
+    radial-gradient(ellipse at 0 5%, #e9d7c680, transparent 35%),
+    radial-gradient(ellipse at 100% 35%, #ded6ee60, transparent 40%);
+  --text-primary: #272c3a;
+  --text-secondary: #505969;
+  --text-muted: #5b6375;
+  --text-quiet: #626979;
+  --accent: #954e20;
+  --accent-text: #88441c;
+  --focus-ring: #9f4e20;
+  --border: #ddd8ce;
+  --border-hover: #a77447;
+  --card-background: #fffdf9;
+  --control-background: #eae5dc;
+  --chip-background: #f0ece5;
+  --filter-background: #ead7c3;
+  --button-background: #292e3f;
+  --button-text: #fffdf9;
+  --button-hover: #3d445b;
+  --download-border: #ffffff40;
+  --social-icon: #343747;
+  --ghost-code: #34374708;
+  --purple-text: #74469b;
+  --purple-background: #e7dbf2;
+  --profile-background: linear-gradient(155deg, #fffdf9, #f4f0e9 70%, #ece7de);
+  --github-background:
+    radial-gradient(ellipse at 0 0, #e7e1ef80, transparent 70%), linear-gradient(140deg, #fffdf9, #f1edf5);
+  --focus-background: linear-gradient(120deg, #eee5f6, #f7f1fc);
+  --contact-background: linear-gradient(120deg, #f0dfcc, #fcf7ef);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  @include light-palette;
+}
+
+// Also follow the OS without JavaScript when no explicit theme is applied.
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    @include light-palette;
+  }
+}
+
+// The blue brand card and project illustrations retain their dark canvases.
+.linkedin-card {
+  color: #fff;
+
+  .social-symbol {
+    color: #fff;
+  }
+}
+
+:root[data-theme='light'] .portrait {
+  border-color: #f4f0e9;
+  box-shadow: 0 14px 30px #49342114;
+}

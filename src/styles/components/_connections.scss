@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #ffffff0a;
+  border: 1px solid var(--border, #ffffff0a);
   transition:
     transform 0.2s,
     border-color 0.2s;
@@ -23,12 +23,11 @@
 
 .social-card:hover {
   transform: translateY(-4px);
-  border-color: #b69d794a;
+  border-color: var(--border-hover, #b69d794a);
 }
 
 .github-card {
-  background:
-    radial-gradient(ellipse at 0 0, #45445070, transparent 70%), linear-gradient(140deg, #242332, #12101e);
+  background: var(--github-background, radial-gradient(ellipse at 0 0, #45445070, transparent 70%), linear-gradient(140deg, #242332, #12101e));
 }
 
 .linkedin-card {
@@ -44,7 +43,7 @@
 }
 
 .social-symbol {
-  color: #eeedf7;
+  color: var(--social-icon, #eeedf7);
   filter: drop-shadow(0 4px 4px #0005);
 }
 
@@ -55,8 +54,8 @@
 }
 
 .social-card p {
-  font-size: 11px;
-  color: #b0aabd;
+  font-size: 14px;
+  color: var(--text-secondary, #b0aabd);
   line-height: 1.7;
   max-width: 190px;
   margin: 0 0 17px;
@@ -70,8 +69,8 @@
   display: flex;
   gap: 8px;
   align-items: center;
-  font-size: 10px;
-  color: #ddd9e7;
+  font-size: 14px;
+  color: var(--text-secondary, #ddd9e7);
 }
 
 .linkedin-card .card-link {
@@ -83,7 +82,7 @@
   right: -12px;
   top: 59px;
   font: 100px $font-heading;
-  color: #ffffff04;
+  color: var(--ghost-code, #ffffff04);
   transform: rotate(-15deg);
   pointer-events: none;
 }
@@ -95,16 +94,16 @@
   align-items: center;
   padding: 23px;
   border-radius: 20px;
-  border: 1px solid #6a4b8255;
-  background: radial-gradient(ellipse at 0 0, #65427655, transparent), #1a1427;
+  border: 1px solid var(--border, #6a4b8255);
+  background: var(--focus-background, radial-gradient(ellipse at 0 0, #65427655, transparent), #1a1427);
 }
 
 .focus-icon {
-  color: #c7a4f4;
+  color: var(--purple-text, #c7a4f4);
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  background: #b37beb12;
+  background: var(--purple-background, #b37beb12);
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -116,8 +115,8 @@
 }
 
 .focus-card p {
-  font-size: 10px;
-  color: #aaa1ba;
+  font-size: 14px;
+  color: var(--text-secondary, #aaa1ba);
   margin: 0;
   line-height: 1.7;
 }
@@ -125,7 +124,7 @@
 .focus-card > svg {
   margin-left: auto;
   flex-shrink: 0;
-  color: #c0aed9;
+  color: var(--purple-text, #c0aed9);
 }
 
 @include down(tablet) {
@@ -146,11 +145,11 @@
   }
 
   .social-card p {
-    font-size: 10px;
+    font-size: 14px;
   }
 
   .card-link {
-    font-size: 9px;
+    font-size: 13px;
   }
 
   .focus-card {
@@ -159,7 +158,7 @@
   }
 
   .focus-card p {
-    font-size: 10px;
+    font-size: 14px;
   }
 
   .focus-card h3 {
@@ -174,5 +173,19 @@
 @include down(small) {
   .social-card {
     padding: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bento {
+    grid-template-columns: 1fr;
+  }
+
+  .social-card {
+    min-height: 210px;
+  }
+
+  .social-card p {
+    max-width: none;
   }
 }

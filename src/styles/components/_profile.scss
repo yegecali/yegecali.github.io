@@ -7,8 +7,8 @@
 }
 
 .profile-card {
-  background: linear-gradient(155deg, #323a53, #192234 60%, #101522);
-  border: 1px solid #ffffff06;
+  background: var(--profile-background, linear-gradient(155deg, #323a53, #192234 60%, #101522));
+  border: 1px solid var(--border, #ffffff06);
   border-radius: 32px;
   margin-top: -113px;
   padding: 137px 26px 18px;
@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: center;
   gap: 7px;
-  color: #c2c7d5;
+  color: var(--text-secondary, #c2c7d5);
   font-size: 9px;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .handle {
-  color: #a9adc1;
+  color: var(--text-secondary, #a9adc1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,14 +56,14 @@
 
 .role {
   font-size: 12px;
-  color: #f2d3ae;
+  color: var(--accent-text, #f2d3ae);
   margin-top: 30px;
 }
 
 .bio {
   font-size: 12px;
   line-height: 1.9;
-  color: #aeb4c8;
+  color: var(--text-secondary, #aeb4c8);
   margin: 12px 0 23px;
 }
 
@@ -71,7 +71,7 @@
   display: flex;
   gap: 23px;
   font-size: 10px;
-  color: #b7bdcd;
+  color: var(--text-secondary, #b7bdcd);
 }
 
 .profile-meta span {
@@ -95,21 +95,21 @@
 .profile-socials {
   display: flex;
   gap: 18px;
-  color: #c5ccdd;
+  color: var(--text-secondary, #c5ccdd);
 }
 
 .profile-socials a:hover {
-  color: #ffc67b;
+  color: var(--accent-text, #ffc67b);
 }
 
 .copy-button {
   border: 0;
-  background: #ffffff09;
+  background: var(--control-background, #ffffff09);
   border-radius: 8px;
   padding: 8px;
   display: grid;
   place-items: center;
-  color: #c5ccdd;
+  color: var(--text-secondary, #c5ccdd);
 }
 
 .copy-feedback {
@@ -118,7 +118,7 @@
   min-height: 13px;
   text-align: right;
   margin-top: 6px;
-  color: #f7c78d;
+  color: var(--accent-text, #f7c78d);
 }
 
 .sidebar-note {
@@ -126,7 +126,7 @@
   align-items: center;
   gap: 8px;
   justify-content: center;
-  color: #777e98;
+  color: var(--text-quiet, #777e98);
   font-size: 9px;
   margin-top: 23px;
 }
@@ -157,46 +157,46 @@
 
 @include down(mobile) {
   .profile-wrap {
-    position: static;
+    position: relative;
     width: 100%;
     padding: 0;
   }
 
   .profile-card {
-    max-width: 100%;
-    padding: 133px 30px 20px;
-    margin-top: -100px;
+    margin-top: 0;
+    padding: 22px;
+    border-radius: 22px;
   }
 
   .profile-card h1 {
-    font-size: 28px;
-    margin-top: 18px;
+    padding-left: 90px;
+    font-size: clamp(20px, 5.5vw, 25px);
+    text-align: left;
+    margin: 0 0 6px;
+    letter-spacing: -0.7px;
+    overflow-wrap: anywhere;
   }
 
-  .profile-status {
-    font-size: 10px;
-  }
-
-  .bio {
-    font-size: 13px;
+  .handle {
+    justify-content: flex-start;
+    padding-left: 90px;
+    font-size: 12px;
   }
 
   .role {
+    padding-left: 90px;
     font-size: 13px;
+    margin: 8px 0 0;
   }
 
-  .profile-meta {
-    font-size: 11px;
-    gap: 28px;
-  }
-
-  .profile-card .bio {
-    max-width: 310px;
-  }
-
+  .profile-status,
+  .profile-card .bio,
+  .profile-meta,
+  .profile-divider,
+  .profile-bottom,
+  .copy-feedback,
   .sidebar-note {
-    font-size: 10px;
-    margin-top: 18px;
+    display: none;
   }
 }
 
@@ -210,13 +210,13 @@
   margin-top: 24px;
   padding: 12px 14px;
   border-radius: 10px;
-  background: $accent;
-  color: #17121d;
+  background: var(--button-background, $accent);
+  color: var(--button-text, #17121d);
   font-size: 13px;
   font-weight: 700;
 
   &:hover {
-    background: #ffc994;
+    background: var(--button-hover, #ffc994);
   }
   > svg {
     flex-shrink: 0;
@@ -225,7 +225,7 @@
 
 .download-cv-format {
   padding: 3px 5px;
-  border: 1px solid #17121d38;
+  border: 1px solid var(--download-border, #17121d38);
   border-radius: 4px;
   font-size: 9px;
 }

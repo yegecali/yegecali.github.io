@@ -1,9 +1,11 @@
 // Entry point: base, layout, components, then motion and library overrides.
 @use 'aos/dist/aos.css' as aos-library;
 @use 'base/reset';
+@use 'themes/palettes';
 @use 'layout/page';
 @use 'components/shared';
 @use 'components/header';
+@use 'components/theme-selector';
 @use 'components/portrait';
 @use 'components/profile';
 @use 'components/intro';

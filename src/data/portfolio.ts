@@ -1,5 +1,5 @@
 import source from './portfolio.json'
-import { iconNames, projectTones } from '../types/portfolio'
+import { iconNames, projectTones, themeModes } from '../types/portfolio'
 import type { Language, PortfolioData, TextKey, Translation } from '../types/portfolio'
 
 export function isLanguage(value: string): value is Language {
@@ -30,6 +30,7 @@ function oneOf<const Values extends readonly string[]>(values: Values, value: st
 // is needed to turn the editable JSON into the application's typed model.
 export const portfolioData: PortfolioData = {
   ...source,
+  appearance: { ...source.appearance, defaultMode: oneOf(themeModes, source.appearance.defaultMode) },
   defaultLanguage: language(source.defaultLanguage),
   translations: source.translations satisfies Record<Language, Translation>,
   languages: source.languages.map(item => ({ ...item, code: language(item.code) })),

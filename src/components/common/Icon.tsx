@@ -14,6 +14,11 @@ import {
   LuShieldCheck,
   LuSparkles,
   LuTerminal,
+  LuSun,
+  LuMoon,
+  LuMonitor,
+  LuMenu,
+  LuX,
 } from 'react-icons/lu'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import type { IconBaseProps, IconType } from 'react-icons'
@@ -37,6 +42,11 @@ const icons: Record<IconName, IconType> = {
   copy: LuCopy,
   check: LuCheck,
   globe: LuGlobe,
+  sun: LuSun,
+  moon: LuMoon,
+  monitor: LuMonitor,
+  menu: LuMenu,
+  x: LuX,
 }
 
 type IconProps = IconBaseProps & { name: IconName }

@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .muted {
-  color: #9399af;
+  color: var(--text-quiet, #9399af);
 }
 
 .eyebrow > span {
@@ -13,10 +13,10 @@
 }
 
 .eyebrow {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 1.8px;
-  color: #c2a58a;
+  color: var(--accent-text, #c2a58a);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -40,7 +40,7 @@
   font-family: monospace;
   font-size: 8px;
   letter-spacing: 1px;
-  color: #70778f;
+  color: var(--text-quiet, #70778f);
   white-space: nowrap;
 }
 
@@ -49,16 +49,16 @@
 }
 
 .section-description {
-  color: #878fa7;
-  font-size: 11px;
+  color: var(--text-quiet, #878fa7);
+  font-size: 14px;
   line-height: 1.7;
   margin: 0 0 22px;
 }
 
 .mini-label {
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 1.3px;
-  color: #a9a4bc;
+  color: var(--text-secondary, #a9a4bc);
 }
 
 .tags {
@@ -71,9 +71,9 @@
   padding: 5px 7px;
   border: 1px solid $border-subtle;
   border-radius: 5px;
-  color: #9fa8bf;
-  font-size: 8px;
-  background: #ffffff03;
+  color: var(--text-secondary, #9fa8bf);
+  font-size: 11px;
+  background: var(--chip-background, #ffffff03);
 }
 
 .skip-link {
@@ -97,16 +97,12 @@
 
 @include down(mobile) {
   .eyebrow {
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 1.5px;
   }
 
   .section-top h2 {
     font-size: 23px;
-  }
-
-  .tags span {
-    font-size: 7px;
   }
 }
 

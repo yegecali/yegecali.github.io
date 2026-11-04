@@ -43,7 +43,7 @@ footer > a:last-child {
   left: 0;
   width: 100%;
   height: 1px;
-  background: #ffc77e;
+  background: var(--accent-text, #ffc77e);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 220ms ease;
@@ -57,7 +57,7 @@ footer > a:last-child {
 .project-card:focus-visible,
 .focus-card:focus-visible {
   transform: translateY(-4px);
-  border-color: #b69d7970;
+  border-color: var(--border-hover, #b69d7970);
 }
 
 .social-card:focus-visible .card-link svg,
@@ -102,7 +102,7 @@ footer > a:last-child {
   .focus-card:hover,
   .skill-card:hover {
     transform: translateY(-5px);
-    border-color: #b69d7970;
+    border-color: var(--border-hover, #b69d7970);
   }
 
   .social-card:hover .card-link svg,
@@ -142,8 +142,8 @@ footer > a:last-child {
   }
 
   .filters button:hover:not(.active) {
-    color: #edcba4;
-    background: #f3ba7b0a;
+    color: var(--accent-text, #edcba4);
+    background: var(--control-background, #f3ba7b0a);
   }
 }
 

@@ -40,25 +40,25 @@ export default function Experience() {
                 </header>
                 <p className="experience-summary">{copy.summary}</p>
                 <ul className="experience-highlights">
-                  {copy.highlights.map(item => (
+                  {copy.highlights.slice(0, 2).map(item => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-                <div className="experience-project">
-                  <span className="experience-label">{t.experienceProject}</span>
-                  <h4>{copy.projectTitle}</h4>
-                  <p>{copy.projectDescription}</p>
-                </div>
                 <details className="experience-details">
                   <summary>
                     {t.experienceDetails}
                     <span aria-hidden="true">+</span>
                   </summary>
                   <ul className="experience-highlights">
-                    {copy.details.map(item => (
+                    {[...copy.highlights.slice(2), ...copy.details].map(item => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
+                  <div className="experience-project">
+                    <span className="experience-label">{t.experienceProject}</span>
+                    <h4>{copy.projectTitle}</h4>
+                    <p>{copy.projectDescription}</p>
+                  </div>
                   <h4>{t.experienceRecognition}</h4>
                   <ul className="experience-highlights">
                     {copy.recognition.map(item => (

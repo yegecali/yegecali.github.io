@@ -26,8 +26,8 @@
 }
 
 .intro > p:last-child {
-  color: #999fb5;
-  font-size: 13px;
+  color: var(--text-secondary, #999fb5);
+  font-size: 15px;
   line-height: 1.85;
   max-width: 450px;
 }
@@ -60,7 +60,7 @@
   }
 
   .intro > p:last-child {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .intro-spark {

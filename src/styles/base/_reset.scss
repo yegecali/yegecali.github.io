@@ -19,9 +19,8 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(ellipse at 0 5%, #75484b50, transparent 31%),
-    radial-gradient(ellipse at 100% 35%, #48257425, transparent 36%);
+  background: var(--page-glow, radial-gradient(ellipse at 0 5%, #75484b50, transparent 31%),
+    radial-gradient(ellipse at 100% 35%, #48257425, transparent 36%));
 }
 
 a {

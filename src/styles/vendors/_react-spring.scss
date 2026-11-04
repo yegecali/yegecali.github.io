@@ -33,7 +33,7 @@
     z-index: -1;
     padding: 0;
     border-radius: inherit;
-    background: #f3ba7b14;
+    background: var(--filter-background, #f3ba7b14);
     pointer-events: none;
   }
 }

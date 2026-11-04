@@ -33,6 +33,11 @@ export const iconNames = [
   'copy',
   'check',
   'globe',
+  'sun',
+  'moon',
+  'monitor',
+  'menu',
+  'x',
 ] as const
 export type IconName = (typeof iconNames)[number]
 export const projectTones = ['teal', 'purple', 'amber', 'blue'] as const
@@ -46,6 +51,10 @@ export type Social = Narrow<
 >
 export type Project = Narrow<RawPortfolio['projects'][number], { icon: IconName; tone: ProjectTone }>
 export type Skill = Narrow<RawPortfolio['skills'][number], { icon: IconName }>
+export const themeModes = ['system', 'light', 'dark'] as const
+export type ThemeMode = (typeof themeModes)[number]
+export type Theme = Exclude<ThemeMode, 'system'>
+export type Appearance = Narrow<RawPortfolio['appearance'], { defaultMode: ThemeMode }>
 export type PortfolioData = Narrow<
   RawPortfolio,
   {
@@ -56,6 +65,7 @@ export type PortfolioData = Narrow<
     socials: Social[]
     projects: Project[]
     skills: Skill[]
+    appearance: Appearance
   }
 >
 export type ParticlesSettings = PortfolioData['effects']['particles']

@@ -4,8 +4,8 @@
   margin-top: 55px;
   border-radius: 20px;
   padding: 32px;
-  background: linear-gradient(120deg, #28212a, #181925);
-  border: 1px solid #8d6b7130;
+  background: var(--contact-background, linear-gradient(120deg, #28212a, #181925));
+  border: 1px solid var(--border, #8d6b7130);
   display: flex;
   gap: 27px;
   align-items: center;
@@ -14,7 +14,7 @@
 .contact-orbit {
   font-size: 65px;
   line-height: 1;
-  color: #f1b97a;
+  color: var(--accent-text, #f1b97a);
 }
 
 .contact h2 {
@@ -27,8 +27,8 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-size: 11px;
-  color: #edd6bd;
+  font-size: 14px;
+  color: var(--accent-text, #edd6bd);
 }
 
 @include down(mobile) {
@@ -47,10 +47,10 @@
   }
 
   .contact .eyebrow {
-    font-size: 7px;
+    font-size: 11px;
   }
 
   .contact a {
-    font-size: 10px;
+    font-size: 14px;
   }
 }

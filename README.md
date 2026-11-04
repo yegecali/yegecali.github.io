@@ -174,3 +174,9 @@ checks ensure employer, project and education content remains in the static HTML
 The profile's **Download CV** link serves the PDF from `public/cv/`, using Vite's
 base URL for GitHub Pages. Replace that file to update the CV; its relative path
 and download filename live in `profile.cv` in `src/data/portfolio.json`.
+
+## Temas claro y oscuro
+
+El botón de sol y luna en la cabecera alterna directamente entre claro y oscuro. El monitor permite volver a la preferencia del sistema. La elección se guarda en el navegador, se mantiene al recargar y se sincroniza entre pestañas.
+
+La configuración está en `appearance` del JSON, los textos en `translations`, la lógica en `context/ThemeContext.tsx` y la paleta clara en `styles/themes/_palettes.scss`. La inicialización del tema se genera en la cabecera del HTML para evitar destellos antes de cargar React.

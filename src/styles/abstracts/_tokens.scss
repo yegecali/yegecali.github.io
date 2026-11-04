@@ -1,12 +1,12 @@
 // Shared design values. Component-specific colors stay with their component.
 $font-body: 'DM Sans', sans-serif;
 $font-heading: 'Space Grotesk', sans-serif;
-$text-primary: #f1f1f8;
-$background: #090c16;
-$text-muted: #a0a7bc;
-$accent: #efb67e;
-$focus-ring: #ffc271;
-$border-subtle: #ffffff0b;
+$text-primary: var(--text-primary, #f1f1f8);
+$background: var(--page-background, #090c16);
+$text-muted: var(--text-muted, #a0a7bc);
+$accent: var(--accent, #efb67e);
+$focus-ring: var(--focus-ring, #ffc271);
+$border-subtle: var(--border, #ffffff0b);
 $content-width: 1180px;
 
 $breakpoints: (
