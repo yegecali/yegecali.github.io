@@ -46,6 +46,11 @@
     "cv": {
       "path": "cv/Yemi-Genderson-Backend-Java.pdf",
       "filename": "Yemi-Genderson-Backend-Java.pdf"
+    },
+    "avatar": {
+      "path": "images/profile-avatar.jpg",
+      "width": 512,
+      "height": 512
     }
   },
   "navigation": [
@@ -301,12 +306,12 @@
       "skills": "Tecnologías",
       "about": "Sobre mí",
       "hello": "Hola, soy",
-      "title": "Backend con Java.",
-      "title2": "Soluciones en la nube.",
-      "intro": "Soy ingeniero de sistemas con experiencia en BCP y NTT DATA LATAM. Diseño APIs y microservicios reactivos con Java y Spring, e integro soluciones en Azure con foco en seguridad, rendimiento y confiabilidad.",
+      "title": "De una buena idea",
+      "title2": "a un sistema que responde.",
+      "intro": "Soy Yemi, ingeniero de software backend. Construyo APIs y microservicios con Java y Azure para resolver problemas reales, con seguridad y rendimiento desde el diseño.",
       "connect": "Conectemos",
       "profile": "Ingeniero de Software Backend",
-      "bio": "Soy ingeniero de sistemas con experiencia en BCP y NTT DATA LATAM. Me especializo en backend con Java, microservicios y Azure.",
+      "bio": "Soy ingeniero de sistemas especializado en desarrollo backend con Java, microservicios y Azure.",
       "location": "Perú",
       "explore": "Explora mi mundo",
       "exploreSub": "Código, proyectos y conversaciones. Todo empieza con una conexión.",
@@ -355,8 +360,8 @@
       "openMenu": "Abrir menú",
       "closeMenu": "Cerrar menú",
       "filterLabel": "Filtrar proyectos",
-      "portraitLabel": "Monograma de {name}",
-      "aboutText": "Soy ingeniero de sistemas y Software Engineer Backend, con experiencia en BCP y NTT DATA LATAM. Diseño microservicios reactivos de alta concurrencia con Java, Spring Cloud, Spring WebFlux, RxJava y Quarkus en Azure. Integro seguridad bancaria, DevSecOps, observabilidad y pruebas de rendimiento para construir servicios confiables.",
+      "portraitLabel": "Avatar ilustrado de {name}",
+      "aboutText": "Soy ingeniero de sistemas y desarrollador de software backend. Diseño microservicios reactivos de alta concurrencia con Java, Spring Cloud, Spring WebFlux, RxJava y Quarkus en Azure. Integro seguridad bancaria, DevSecOps, observabilidad y pruebas de rendimiento para construir servicios confiables.",
       "experience": "Experiencia",
       "experienceLabel": "TRAYECTORIA PROFESIONAL",
       "experienceTitle": "Backend en el mundo real.",
@@ -377,7 +382,34 @@
       "themeUseSystem": "Usar tema del sistema",
       "capabilities": "Diseño APIs y microservicios reactivos, integro servicios en la nube y construyo soluciones seguras, observables y preparadas para alta concurrencia.",
       "learnMore": "¿Quieres conocer más de mí?",
-      "contactLabel": "HAGÁMOSLO REALIDAD"
+      "contactLabel": "HAGÁMOSLO REALIDAD",
+      "heroEyebrow": "SOFTWARE CON PROPÓSITO",
+      "heroProject": "Tengo un proyecto",
+      "heroTalent": "Hablemos de una oportunidad",
+      "heroExplore": "Explorar proyectos",
+      "heroSpecialties": [
+        "APIs y microservicios",
+        "Java reactivo",
+        "Azure"
+      ],
+      "heroSpecialtiesLabel": "Mis especialidades",
+      "contactCopy": "Copiar mensaje",
+      "contactCopied": "Mensaje copiado",
+      "contactCopyError": "No se pudo copiar. Puedes seleccionar el texto del mensaje.",
+      "contactPaths": [
+        {
+          "id": "contact-project",
+          "title": "Construyamos tu próxima idea.",
+          "description": "Cuéntame qué necesitas resolver y conversemos sobre tu proyecto.",
+          "message": "Hola, Yemi. Quisiera conversar contigo sobre un proyecto de desarrollo backend. ¿Podemos revisar la idea y su alcance?"
+        },
+        {
+          "id": "contact-talent",
+          "title": "Mi próximo reto puede estar en tu equipo.",
+          "description": "Si mi perfil encaja con lo que buscas, conversemos sobre el puesto y los retos de tu equipo.",
+          "message": "Hola, Yemi. Me interesa tu perfil backend con Java y Azure. Quisiera conversar sobre una oportunidad en nuestro equipo."
+        }
+      ]
     },
     "en": {
       "tag": "Software engineering · Peru",
@@ -385,12 +417,12 @@
       "skills": "Skills",
       "about": "About",
       "hello": "Hi, I’m",
-      "title": "Java backend.",
-      "title2": "Cloud solutions.",
-      "intro": "I am a systems engineer with experience at BCP and NTT DATA LATAM. I design APIs and reactive microservices with Java and Spring, and integrate Azure solutions with a focus on security, performance and reliability.",
+      "title": "From a good idea",
+      "title2": "to a system that delivers.",
+      "intro": "I’m Yemi, a backend software engineer. I build APIs and microservices with Java and Azure to solve real problems, with security and performance designed in from the start.",
       "connect": "Let’s connect",
       "profile": "Backend Software Engineer",
-      "bio": "I am a systems engineer with experience at BCP and NTT DATA LATAM. I specialize in Java backend development, microservices and Azure.",
+      "bio": "I am a systems engineer specializing in Java backend development, microservices and Azure.",
       "location": "Peru",
       "explore": "Explore my world",
       "exploreSub": "Code, projects and conversations. It all starts with a connection.",
@@ -439,8 +471,8 @@
       "openMenu": "Open menu",
       "closeMenu": "Close menu",
       "filterLabel": "Filter projects",
-      "portraitLabel": "Monogram of {name}",
-      "aboutText": "I am a systems engineer and backend software engineer with experience at BCP and NTT DATA LATAM. I design highly concurrent reactive microservices with Java, Spring Cloud, Spring WebFlux, RxJava and Quarkus on Azure. I combine banking security, DevSecOps, observability and performance testing to build reliable services.",
+      "portraitLabel": "Illustrated avatar for {name}",
+      "aboutText": "I am a systems engineer and backend software engineer. I design highly concurrent reactive microservices with Java, Spring Cloud, Spring WebFlux, RxJava and Quarkus on Azure. I combine banking security, DevSecOps, observability and performance testing to build reliable services.",
       "experience": "Experience",
       "experienceLabel": "PROFESSIONAL JOURNEY",
       "experienceTitle": "Backend in the real world.",
@@ -461,7 +493,34 @@
       "themeUseSystem": "Use system theme",
       "capabilities": "I design APIs and reactive microservices, integrate cloud services and build secure, observable solutions for highly concurrent workloads.",
       "learnMore": "Want to know more about me?",
-      "contactLabel": "LET’S MAKE IT HAPPEN"
+      "contactLabel": "LET’S MAKE IT HAPPEN",
+      "heroEyebrow": "SOFTWARE WITH PURPOSE",
+      "heroProject": "I have a project",
+      "heroTalent": "Let’s discuss an opportunity",
+      "heroExplore": "Explore projects",
+      "heroSpecialties": [
+        "APIs & microservices",
+        "Reactive Java",
+        "Azure"
+      ],
+      "heroSpecialtiesLabel": "My specialties",
+      "contactCopy": "Copy message",
+      "contactCopied": "Message copied",
+      "contactCopyError": "Could not copy. You can select the message text instead.",
+      "contactPaths": [
+        {
+          "id": "contact-project",
+          "title": "Let’s build your next idea.",
+          "description": "Tell me what you need to solve, and let’s discuss your project.",
+          "message": "Hi Yemi, I’d like to discuss a backend development project with you. Could we go over the idea and its scope?"
+        },
+        {
+          "id": "contact-talent",
+          "title": "My next challenge could be on your team.",
+          "description": "If my profile matches what you are looking for, let’s discuss the role and your team’s challenges.",
+          "message": "Hi Yemi, I’m interested in your Java and Azure backend profile. I’d like to discuss an opportunity on our team."
+        }
+      ]
     }
   },
   "effects": {

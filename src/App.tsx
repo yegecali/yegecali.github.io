@@ -3,7 +3,6 @@ import { usePortfolio } from './context/PortfolioContext'
 import useAos from './hooks/useAos'
 import ParticlesBackground from './components/ParticlesBackground'
 import Header from './components/Header'
-import ProfileSidebar from './components/ProfileSidebar'
 import Intro from './components/Intro'
 import Connections from './components/Connections'
 import Projects from './components/Projects'
@@ -38,9 +37,8 @@ function PortfolioPage() {
       </a>
       <Header />
       <main id="main" className="layout">
-        <ProfileSidebar />
+        <Intro />
         <div className="main-content">
-          <Intro />
           <Connections />
           <Experience />
           <Projects />

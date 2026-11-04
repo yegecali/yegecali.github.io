@@ -1,57 +1,165 @@
 @use '../abstracts' as *;
 
 .intro {
-  position: relative;
-  margin: 8px 0 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
+  align-items: center;
+  column-gap: clamp(32px, 5vw, 80px);
+  row-gap: 36px;
+  padding: 28px 0 32px;
+  border-bottom: 1px solid $border-subtle;
 }
 
-.intro h2 {
-  font: 500 clamp(40px, 4.5vw, 58px)/1.12 $font-heading;
-  letter-spacing: -2.6px;
-  margin: 22px 0 20px;
-  position: relative;
-  width: fit-content;
+.intro-copy {
+  min-width: 0;
 }
-
-.intro h2 > span {
-  color: $text-muted;
+.intro .eyebrow {
+  margin: 0 0 20px;
 }
-
-.intro-spark {
-  position: absolute;
-  right: 0;
-  top: -28px;
-  color: #f2ba78;
-  transform: rotate(10deg);
+.intro h1 {
+  margin: 0;
+  font: 600 clamp(42px, 5vw, 68px)/1.08 $font-heading;
+  letter-spacing: -2.8px;
+  text-wrap: balance;
+  > span {
+    display: block;
+    color: var(--accent-text, #efb67e);
+  }
 }
-
-.intro > p:last-child {
-  color: var(--text-secondary, #999fb5);
-  font-size: 15px;
-  line-height: 1.85;
+.intro-description {
+  margin: 24px 0 0;
   max-width: 560px;
+  color: var(--text-secondary, #aeb4c8);
+  font-size: 16px;
+  line-height: 1.8;
 }
-
-@include up(wide) {
-  .intro h2 {
-    font-size: 64px;
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.hero-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 14px 20px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  > svg {
+    flex-shrink: 0;
+  }
+}
+.hero-action-primary {
+  background: var(--button-background, #efb67e);
+  color: var(--button-text, #17121d);
+  &:hover {
+    background: var(--button-hover, #ffc994);
+  }
+}
+.hero-action-secondary {
+  border-color: var(--border-hover, #efb67e40);
+  background: var(--control-background, #ffffff06);
+  color: $text-primary;
+  &:hover {
+    border-color: var(--accent-text, #efb67e);
+  }
+}
+.intro-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 24px;
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    color: var(--text-secondary, #aeb4c8);
+    font-size: 12px;
+    &:hover {
+      color: var(--accent-text, #efb67e);
+    }
+  }
+  .explore-arrow {
+    transform: rotate(90deg);
+  }
+}
+.intro-specialties {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 36px;
+  list-style: none;
+  padding: 24px 0 0;
+  margin: 0;
+  border-top: 1px solid $border-subtle;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+  }
+  span {
+    color: var(--accent-text, #efb67e);
+    font: 10px monospace;
   }
 }
 
 @include down(tablet) {
-  .intro h2 {
-    font-size: 46px;
+  .intro {
+    grid-template-columns: minmax(0, 1.5fr) minmax(240px, 1fr);
+    gap: 28px;
   }
-
-  .intro-spark {
-    right: 0;
-    width: 24px;
+  .intro h1 {
+    font-size: clamp(40px, 5.1vw, 54px);
+    letter-spacing: -2px;
+  }
+  .hero-action {
+    padding: 13px 16px;
   }
 }
-
-// The mobile profile card contains the complete introduction and both actions.
 @include down(mobile) {
   .intro {
-    display: none;
+    grid-template-columns: 1fr;
+    padding: 0 0 24px;
+    gap: 24px;
+  }
+  .intro h1 {
+    font-size: clamp(35px, 8.8vw, 48px);
+    letter-spacing: -1.6px;
+  }
+  .intro .eyebrow {
+    margin-bottom: 14px;
+    font-size: 10px;
+  }
+  .intro-description {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .intro-actions {
+    margin-top: 22px;
+    gap: 10px;
+  }
+  .hero-action {
+    flex: 1 1 160px;
+    min-height: 48px;
+    font-size: 12px;
+  }
+  .intro-links {
+    margin-top: 14px;
+    gap: 4px 20px;
+  }
+  .intro-specialties {
+    gap: 12px 22px;
+    padding-top: 18px;
+    li {
+      font-size: 11px;
+    }
   }
 }

@@ -6,11 +6,15 @@
 }
 
 .layout {
-  display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
-  gap: 60px;
-  align-items: start;
-  padding: 28px 0 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 24px 0 80px;
+}
+
+.main-content {
+  width: min(100%, 960px);
+  margin-inline: auto;
 }
 
 .content-section {
@@ -22,21 +26,11 @@
   .site-shell {
     width: $content-width;
   }
-
-  .layout {
-    grid-template-columns: 320px minmax(0, 1fr);
-    gap: 80px;
-  }
 }
 
 @include down(tablet) {
   .site-shell {
     width: calc(100% - 48px);
-  }
-
-  .layout {
-    grid-template-columns: 270px minmax(0, 1fr);
-    gap: 32px;
   }
 }
 

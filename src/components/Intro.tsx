@@ -1,24 +1,49 @@
 import Icon from './common/Icon'
 import { usePortfolio } from '../context/PortfolioContext'
-import FloatingAccent from './motion/FloatingAccent'
+import SpringLink from './motion/SpringLink'
+import ProfileSidebar from './ProfileSidebar'
 
 export default function Intro() {
-  const { data, t } = usePortfolio()
+  const { t } = usePortfolio()
   return (
-    <section className="intro" aria-label={`${t.hello} ${data.profile.name}`}>
-      <p className="eyebrow">
-        <span />
-        {t.hello} {data.profile.name}
-      </p>
-      <h2>
-        {t.title}
-        <br />
-        <span>{t.title2}</span>
-        <FloatingAccent className="intro-spark">
-          <Icon name="sparkles" size={31} />
-        </FloatingAccent>
-      </h2>
-      <p>{t.intro}</p>
+    <section className="intro" aria-labelledby="intro-title">
+      <div className="intro-copy">
+        <p className="eyebrow">
+          <span />
+          {t.heroEyebrow}
+        </p>
+        <h1 id="intro-title">
+          {t.title}
+          <span>{t.title2}</span>
+        </h1>
+        <p className="intro-description">{t.intro}</p>
+        <div className="intro-actions">
+          <SpringLink className="hero-action hero-action-primary" href="#contact-project" external={false}>
+            {t.heroProject}
+            <Icon name="arrow-up-right" size={18} />
+          </SpringLink>
+          <SpringLink className="hero-action hero-action-secondary" href="#contact-talent" external={false}>
+            {t.heroTalent}
+            <Icon name="arrow-right" size={18} />
+          </SpringLink>
+        </div>
+        <div className="intro-links">
+          <a href="#projects">
+            {t.heroExplore}
+            <Icon name="arrow-right" size={15} className="explore-arrow" />
+          </a>
+          <a href="#about">{t.learnMore}</a>
+        </div>
+      </div>
+      <ProfileSidebar />
+      <ul className="intro-specialties" aria-label={t.heroSpecialtiesLabel}>
+        {t.heroSpecialties.map((specialty, index) => (
+          <li key={specialty}>
+            <span aria-hidden="true">0{index + 1}</span>
+            {specialty}
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }
