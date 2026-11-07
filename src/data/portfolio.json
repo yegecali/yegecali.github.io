@@ -45,7 +45,190 @@
     },
     "cv": {
       "path": "cv/Yemi-Genderson-Backend-Java.pdf",
-      "filename": "Yemi-Genderson-Backend-Java.pdf"
+      "filename": "Yemi-Genderson-Backend-Java.pdf",
+      "fullName": "Yemi Genderson, Canchari Lizarbe",
+      "location": "Lima, Perú",
+      "phone": "+51 939234511",
+      "content": {
+        "es": {
+          "summary": "Ingeniero de sistemas y Software Engineer Backend con experiencia en el sector bancario, especializado en el diseño y desarrollo de APIs y microservicios reactivos con Java y Azure. Trabajo con Spring Boot, Spring Cloud, Spring WebFlux, RxJava y Quarkus para construir servicios de alta concurrencia, resilientes y observables. Integro seguridad, gobierno de APIs y validaciones de calidad desde el diseño, con prácticas de OWASP, PCI-DSS y DevSecOps. Mi experiencia abarca pruebas de rendimiento, automatización de validaciones, despliegues cloud y diagnóstico de incidentes en producción, además del uso de agentes de IA como apoyo al desarrollo y al soporte con supervisión humana.",
+          "strengths": [
+            "Diseño de soluciones backend: contratos API-first, separación de responsabilidades y patrones de resiliencia para integraciones entre servicios.",
+            "Seguridad y calidad: modelado de amenazas, análisis de vulnerabilidades y validación del rendimiento con foco en estabilidad y alta concurrencia.",
+            "Operación y mejora continua: diagnóstico de incidentes, observabilidad, automatización de validaciones y participación en revisiones de arquitectura."
+          ],
+          "competencies": [
+            {
+              "title": "Lenguajes y desarrollo backend",
+              "items": "Java 17+, Python, TypeScript, Spring Boot, Spring Cloud, Spring Cloud Gateway, Spring WebFlux, RxJava, Quarkus, Project Reactor y Reactive Streams."
+            },
+            {
+              "title": "Arquitectura y diseño de APIs",
+              "items": "Microservicios, API-first, OpenAPI 3.x, DDD, arquitectura orientada a eventos, CQRS, Saga, Outbox y Strategy. Resiliencia con Circuit Breaker, Retry, Timeout y Resilience4j."
+            },
+            {
+              "title": "Cloud e infraestructura",
+              "items": "Microsoft Azure, API Management (APIM), Azure Functions, Azure Front Door, Azure Kubernetes Service (AKS), Docker y Terraform. Ingress NGINX, escalado HPA, resource quotas, Proxmox y k3s."
+            },
+            {
+              "title": "CI/CD y automatización",
+              "items": "GitHub Actions, Jenkins y GitOps; automatización de validaciones, pipelines de despliegue y apoyo al desarrollo con GitHub Copilot y agentes LLM personalizados."
+            },
+            {
+              "title": "Seguridad y cumplimiento",
+              "items": "OWASP Top 10, PCI-DSS, OAuth 2.0, mecanismos de autenticación, OTP, CAPTCHA, WAF y protección DDoS, rate limit y subscription keys. Modelado de amenazas con Cornucopia e IriusRisk. HashiCorp Vault para secretos y Keycloak para identidad."
+            },
+            {
+              "title": "DevSecOps y calidad de código",
+              "items": "Fortify SAST, SonarQube, JFrog Xray y CAST para análisis estático, calidad, dependencias y atención de vulnerabilidades."
+            },
+            {
+              "title": "Pruebas y rendimiento",
+              "items": "JUnit 5, Mockito, Karate y WireMock. JMeter y k6 para pruebas de carga y alta concurrencia, análisis de percentiles P95/P99 y validación de estabilidad."
+            },
+            {
+              "title": "Observabilidad y soporte",
+              "items": "Dynatrace APM, Grafana, Kibana, Prometheus, Loki, Application Insights, Micrometer y trazabilidad distribuida; dashboards, alertas y diagnóstico de incidentes."
+            },
+            {
+              "title": "Datos y mensajería",
+              "items": "Apache Kafka, SQL Server, PostgreSQL, MongoDB y Redis. Procesos de integración de datos con Azure Data Factory y Databricks."
+            }
+          ],
+          "experience": {
+            "bcp": {
+              "summary": "Desarrollo de microservicios reactivos y servicios de autenticación de identidad digital para canales bancarios, con foco en alta concurrencia, disponibilidad, seguridad y tolerancia a fallos.",
+              "responsibilities": [
+                "Diseño y desarrollo de microservicios reactivos de alto rendimiento con Java 17+, Spring WebFlux, RxJava y Quarkus, aplicando I/O no bloqueante y gestión eficiente de hilos.",
+                "Pruebas de rendimiento y validación de alta concurrencia con JMeter y k6, analizando percentiles P95 y P99 para asegurar la estabilidad de los servicios.",
+                "Implementación de controles OWASP Top 10 y cumplimiento de PCI-DSS en APIs del sector bancario.",
+                "Modelado de amenazas con Cornucopia y atención de vulnerabilidades identificadas en procesos de Ethical Hacking e IriusRisk.",
+                "Integración de Fortify SAST para análisis estático, SonarQube para calidad de código, JFrog Xray para vulnerabilidades en dependencias y CAST para inteligencia de software.",
+                "Diseño de pipelines con GitHub Actions para automatizar validaciones de despliegue.",
+                "Configuración de GitHub Copilot y agentes LLM personalizados para aplicar estándares de codificación y nomenclatura.",
+                "Configuración y publicación de APIs en Azure API Management (APIM), con políticas personalizadas de rate limit, timeouts y subscription keys.",
+                "Diseño de contratos API-first con OpenAPI 3.x.",
+                "Diagnóstico de incidentes en producción mediante dashboards de Grafana y Kibana.",
+                "Desarrollo de funciones serverless con Azure Functions para procesamiento asíncrono.",
+                "Participación en la revisión y discusión de arquitecturas con el Arquitecto de Soluciones.",
+                "Participación en servicios de autenticación cross-channel para 20 canales digitales, con hasta 500 solicitudes por segundo en producción, alta disponibilidad y tolerancia a fallos.",
+                "Integración de mecanismos de autenticación con tarjeta y clave, RSA Token, reconocimiento facial y OTP (One-Time Password).",
+                "Controles de protección con CAPTCHA, WAF (Web Application Firewall) y Azure Front Door frente a ataques DDoS."
+              ],
+              "recognition": [
+                "Ganador de una hackatón de Java con una solución basada en microservicios, presentada con una arquitectura a gran escala.",
+                "Automatización de tickets de soporte a incidentes en ambientes preproductivos: la llegada de tickets al buzón del equipo dispara validaciones de servicios propios y de terceros."
+              ]
+            },
+            "ntt-data": {
+              "summary": "Diseño, desarrollo y operación de APIs REST y microservicios en Azure, con responsabilidades en resiliencia, gobierno de APIs, observabilidad, despliegues y seguridad.",
+              "responsibilities": [
+                "Diseñé e implementé APIs REST con Java, Spring Boot, Spring Cloud y Spring Cloud Gateway.",
+                "Construí APIs resilientes con los patrones Circuit Breaker, Retry y Timeout mediante Resilience4j.",
+                "Implementé estrategias de mocking con WireMock para pruebas de integración.",
+                "Diseñé contratos API-first con OpenAPI 3.x bajo gobierno de APIs, garantizando consistencia entre más de 15 microservicios.",
+                "Gestioné monitoreo y observabilidad con Dynatrace APM, configurando dashboards personalizados, alertas y diagnóstico de incidentes.",
+                "Configuré y gestioné despliegues en Azure Kubernetes Service (AKS): Ingress NGINX, Horizontal Pod Autoscaling (HPA), resource quotas y estrategias GitOps.",
+                "Integré HashiCorp Vault como cliente para la gestión de secretos, con rotación automática de credenciales y eliminación de secretos hardcodeados en el 100 % del código.",
+                "Implementé controles antifraude con CAPTCHA para reducir tráfico malicioso de bots y proteger endpoints críticos."
+              ],
+              "recognition": [
+                "Reconocimiento por participar en la migración de 20 millones de registros de usuarios desde una base de datos on-premise a la nube, mediante un proceso ETL con Azure Data Factory y Databricks."
+              ]
+            }
+          },
+          "headline": "Ingeniero de Sistemas"
+        },
+        "en": {
+          "summary": "Systems engineer and Backend Software Engineer with banking experience, specializing in APIs and reactive microservices with Java and Azure. I work with Spring Boot, Spring Cloud, Spring WebFlux, RxJava and Quarkus to build highly concurrent, resilient and observable services. I integrate security, API governance and quality validation from the design stage, using OWASP, PCI-DSS and DevSecOps practices. My experience covers performance testing, automated validations, cloud deployments and production incident diagnosis, as well as AI agents supporting development and human-supervised support.",
+          "strengths": [
+            "Backend solution design: API-first contracts, separation of responsibilities and resilience patterns for service integrations.",
+            "Security and quality: threat modeling, vulnerability analysis and performance validation focused on stability and high concurrency.",
+            "Operations and continuous improvement: incident diagnosis, observability, automated validations and participation in architecture reviews."
+          ],
+          "competencies": [
+            {
+              "title": "Languages and backend development",
+              "items": "Java 17+, Python, TypeScript, Spring Boot, Spring Cloud, Spring Cloud Gateway, Spring WebFlux, RxJava, Quarkus, Project Reactor and Reactive Streams."
+            },
+            {
+              "title": "Architecture and API design",
+              "items": "Microservices, API-first, OpenAPI 3.x, DDD, event-driven architecture, CQRS, Saga, Outbox and Strategy. Resilience with Circuit Breaker, Retry, Timeout and Resilience4j."
+            },
+            {
+              "title": "Cloud and infrastructure",
+              "items": "Microsoft Azure, API Management (APIM), Azure Functions, Azure Front Door, Azure Kubernetes Service (AKS), Docker and Terraform. NGINX Ingress, HPA scaling, resource quotas, Proxmox and k3s."
+            },
+            {
+              "title": "CI/CD and automation",
+              "items": "GitHub Actions, Jenkins and GitOps; automated validations, deployment pipelines and development support with GitHub Copilot and custom LLM agents."
+            },
+            {
+              "title": "Security and compliance",
+              "items": "OWASP Top 10, PCI-DSS, OAuth 2.0, authentication mechanisms, OTP, CAPTCHA, WAF and DDoS protection, rate limits and subscription keys. Threat modeling with Cornucopia and IriusRisk. HashiCorp Vault for secrets and Keycloak for identity."
+            },
+            {
+              "title": "DevSecOps and code quality",
+              "items": "Fortify SAST, SonarQube, JFrog Xray and CAST for static analysis, quality, dependencies and vulnerability remediation."
+            },
+            {
+              "title": "Testing and performance",
+              "items": "JUnit 5, Mockito, Karate and WireMock. JMeter and k6 for load and concurrency testing, P95/P99 percentile analysis and stability validation."
+            },
+            {
+              "title": "Observability and support",
+              "items": "Dynatrace APM, Grafana, Kibana, Prometheus, Loki, Application Insights, Micrometer and distributed tracing; dashboards, alerts and incident diagnosis."
+            },
+            {
+              "title": "Data and messaging",
+              "items": "Apache Kafka, SQL Server, PostgreSQL, MongoDB and Redis. Data integration with Azure Data Factory and Databricks."
+            }
+          ],
+          "experience": {
+            "bcp": {
+              "summary": "Reactive microservices and digital identity authentication for banking channels, focused on high concurrency, availability, security and fault tolerance.",
+              "responsibilities": [
+                "Design and development of high-performance reactive microservices with Java 17+, Spring WebFlux, RxJava and Quarkus, using non-blocking I/O and efficient thread management.",
+                "Performance and concurrency testing with JMeter and k6, analyzing P95 and P99 percentiles to maintain service stability.",
+                "Implementation of OWASP Top 10 controls and PCI-DSS compliance for banking APIs.",
+                "Threat modeling with Cornucopia and remediation of findings from Ethical Hacking and IriusRisk processes.",
+                "Integration of Fortify SAST for static analysis, SonarQube for code quality, JFrog Xray for dependency vulnerabilities and CAST for software intelligence.",
+                "GitHub Actions pipeline design to automate deployment validations.",
+                "Configuration of GitHub Copilot and custom LLM agents to apply coding and naming standards.",
+                "API configuration and publishing in Azure API Management (APIM), with custom rate limit, timeout and subscription key policies.",
+                "API-first contract design with OpenAPI 3.x.",
+                "Production incident diagnosis using Grafana and Kibana dashboards.",
+                "Serverless Azure Functions development for asynchronous processing.",
+                "Participation in architecture reviews and discussions with the Solutions Architect.",
+                "Contribution to cross-channel authentication services for 20 digital channels, handling up to 500 requests per second in production with high availability and fault tolerance.",
+                "Integration of card and PIN, RSA Token, facial recognition and OTP (One-Time Password) authentication mechanisms.",
+                "Protection controls with CAPTCHA, WAF (Web Application Firewall) and Azure Front Door against DDoS attacks."
+              ],
+              "recognition": [
+                "Winner of a Java hackathon with a microservices solution presented with a large-scale architecture.",
+                "Automated preproduction incident support tickets: messages arriving in the team mailbox trigger validation of internal and third-party services."
+              ]
+            },
+            "ntt-data": {
+              "summary": "Design, development and operation of REST APIs and microservices on Azure, covering resilience, API governance, observability, deployments and security.",
+              "responsibilities": [
+                "Designed and implemented REST APIs with Java, Spring Boot, Spring Cloud and Spring Cloud Gateway.",
+                "Built resilient APIs using Circuit Breaker, Retry and Timeout patterns with Resilience4j.",
+                "Implemented mocking strategies with WireMock for integration tests.",
+                "Designed API-first contracts with OpenAPI 3.x under API governance, ensuring consistency across more than 15 microservices.",
+                "Managed monitoring and observability with Dynatrace APM, including custom dashboards, alerts and incident diagnosis.",
+                "Configured and managed Azure Kubernetes Service (AKS) deployments: NGINX Ingress, Horizontal Pod Autoscaling (HPA), resource quotas and GitOps strategies.",
+                "Integrated HashiCorp Vault as a client for secrets management, with automated credential rotation and removal of hardcoded secrets from 100% of the code.",
+                "Implemented CAPTCHA antifraud controls to reduce malicious bot traffic and protect critical endpoints."
+              ],
+              "recognition": [
+                "Recognized for contributing to the migration of 20 million user records from an on-premise database to the cloud through an ETL process using Azure Data Factory and Databricks."
+              ]
+            }
+          },
+          "headline": "Systems Engineer"
+        }
+      }
     },
     "avatar": {
       "path": "images/profile-avatar.jpg",

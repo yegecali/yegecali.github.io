@@ -8,7 +8,6 @@ on:
 permissions:
   contents: write
   pages: write
-  id-token: write
 
 concurrency:
   group: portfolio-production
@@ -32,6 +31,15 @@ jobs:
       - run: |
           test -s dist/index.html
           test -d dist/assets
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs'
+          import { resolve } from 'node:path'
+          const data = JSON.parse(readFileSync('src/data/portfolio.json', 'utf8'))
+          const pdf = readFileSync(resolve('dist', data.profile.cv.path))
+          if (pdf.length < 1000 || pdf.subarray(0, 5).toString() !== '%PDF-') {
+            throw new Error('Missing or invalid generated CV in the Pages build')
+          }
+          NODE
           grep -q 'https://yegecali.github.io/' dist/index.html
       - name: Publish generated static files to main and master
         shell: bash
@@ -55,17 +63,7 @@ jobs:
             fi
             cd "$GITHUB_WORKSPACE"
           done
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Request GitHub Pages build from master
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds" --jq '{status, url}'

@@ -128,52 +128,87 @@ Los breakpoints disponibles son `small`, `mobile`, `tablet` y `wide`. También p
 - `components/ParticlesBackground.tsx` consume `effects.particles`. Ajusta `mobileCount`, `config.particles.number.value`, `color.value`, `line_linked` o `move.speed` desde el JSON. La configuración se clona para evitar que la biblioteca modifique los datos compartidos.
 - Las partículas se pausan al ocultar la pestaña y se desactivan con movimiento reducido. El fondo no intercepta clics ni desplazamiento.
 
-## Deployment
+## Publicación en GitHub Pages
 
-Push to `gp-portfolio-build`. GitHub Actions builds `portfolio/dist` and commits only the generated static site to `gp-portfolio`. Set **Settings → Pages → Build and deployment → Deploy from a branch → gp-portfolio / (root)** once. The site is not published until that setting is enabled. No GitHub Pages workflow is required in the publishing branch.
+La rama de trabajo es `develop`. Un push a esa rama ejecuta
+`.github/workflows/deploy.yml`, que:
 
-El workflow se ejecuta con cualquier push a `gp-portfolio-build`, sin filtrar archivos modificados. Un commit local se despliega después de hacer push. Los pull requests hacia esa rama compilan y validan sin publicar.
+1. Instala las dependencias con Node.js 22 y `npm ci`.
+2. Ejecuta `npm run build`: genera el CV, comprueba TypeScript, compila y prerenderiza.
+3. Verifica que el HTML, los assets y el PDF estén presentes en `dist/`.
+4. Publica únicamente los archivos estáticos en `main` y `master`.
+5. Solicita una reconstrucción de GitHub Pages mediante su API.
 
-Para desplegar manualmente, abre **Actions → Build React portfolio and publish to gp-portfolio → Run workflow**, selecciona `gp-portfolio-build` y ejecuta. El despliegue manual siempre usa la versión más reciente de esa rama; `create_release` permite generar además una release opcional. También puedes usar `gh workflow run portfolio-pages.yml --ref gp-portfolio-build`.
+El repositorio `yegecali/yegecali.github.io` está configurado para publicar desde
+`master / (root)` con **Deploy from a branch**. El sitio queda disponible en
+https://yegecali.github.io/. La ejecución separada **pages build and deployment**
+confirma la publicación en Pages; revisa ambas ejecuciones en Actions.
 
-GitHub requiere que el archivo del workflow con `workflow_dispatch` exista también en la rama predeterminada para habilitar la ejecución manual. Si no aparece el botón, incorpora ese archivo en la rama predeterminada. [Documentación de GitHub](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow?tool=webui).
+La solicitud explícita del paso 5 evita depender de que un push con `GITHUB_TOKEN`
+dispare Pages. El token del workflow usa `contents: write` para las ramas y
+`pages: write` para solicitar la reconstrucción. No cambia la configuración ni
+las reglas del entorno `github-pages`, que admite únicamente `master`.
 
-### Ruta del sitio en GitHub Pages
+El workflow no ejecuta `actions/deploy-pages` desde `develop`: esa rama no está
+permitida por las reglas actuales del entorno. El despliegue real lo realiza
+Pages desde `master`, conservando la configuración existente.
 
-El repositorio actual, `yegecali/yegecali`, es un sitio de proyecto y su URL predeterminada es `https://yegecali.github.io/`. Elegir `/(root)` en Settings → Pages selecciona la carpeta de la rama que se publica; no elimina el nombre del repositorio de la URL.
+Los cambios locales necesitan commit y push a `develop`; ejecutar el build local
+no publica el sitio. También existe `workflow_dispatch` para ejecución manual,
+si GitHub muestra ese workflow en la interfaz. Las rutas de assets, del CV, el
+canonical y el sitemap se calculan desde `metadata.siteUrl`.
 
-Para publicar en `https://yegecali.github.io/`, el repositorio de destino debe llamarse `yegecali.github.io`. Otra opción es configurar un dominio propio en el proyecto actual. Cambiar únicamente `base` a `/` no cambia la URL asignada por GitHub Pages y rompería la resolución de los assets del despliegue actual.
-
-Cuando el destino esté configurado, actualiza `metadata.siteUrl` en el JSON y ajusta el repositorio de publicación del Action si corresponde. La base de Vite, el canonical y el sitemap se calculan desde esa URL. No renombres el repositorio de perfil `yegecali/yegecali` solo para cambiar Pages: también se utiliza para el README de tu perfil.
-
-Referencia: [GitHub Pages quickstart](https://docs.github.com/en/pages/quickstart) y [dominios personalizados](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages).
-
-
-## Validation and releases
-
-Pull requests targeting `gp-portfolio-build` build and upload an artifact without
-publishing. Pushes retain the existing publication to `gp-portfolio`.
-The workflow uses Node.js 22 and `npm ci` with the committed lockfile.
-
-Run the workflow on `gp-portfolio-build` with `create_release` enabled to publish
-and then create a `portfolio-<run_id>.<attempt>` release. It targets the exact
-source commit and includes `portfolio.tar.gz` and `SHA256SUMS`. Releases are
-optional and are not marked as the latest release of the repository.
-The existing `PAGES_DEPLOY_TOKEN` remains necessary for branch-based Pages;
-release creation uses `GITHUB_TOKEN` with Contents write permission.
+Referencia: [configuración de la fuente de publicación](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+y [API de reconstrucción de Pages](https://docs.github.com/en/rest/pages/pages#request-a-github-pages-build).
 
 ## Professional experience
 
 `src/data/portfolio.json` contains the bilingual `experience` entries (employers,
-roles, dates, responsibilities, projects and recognition) and `education`.
+roles, dates, responsibilities and recognition) and `education`.
 Use `endYear: null` for an ongoing role. The section appears before personal
 projects; technical details expand with native, keyboard-accessible disclosures.
 Employer initials are text identifiers, not official logos. Build-time prerender
-checks ensure employer, project and education content remains in the static HTML.
+checks ensure employer, experience summary and education content remains in the static HTML.
 
-The profile's **Download CV** link serves the PDF from `public/cv/`, using Vite's
-base URL for GitHub Pages. Replace that file to update the CV; its relative path
-and download filename live in `profile.cv` in `src/data/portfolio.json`.
+## CV generado automáticamente
+
+El CV se construye con Node.js y PDFKit a partir de `src/data/portfolio.json`.
+No requiere Python, un navegador ni servicios externos.
+
+- `npm run dev`: el plugin `build/cv.ts` genera el PDF antes de servir la página.
+  Al guardar cambios en el JSON, se regenera también durante los reinicios
+  automáticos de configuración de Vite. No requiere un reinicio manual.
+- `npm run build`: el hook `prebuild` genera el CV antes del build. Vite copia el
+  archivo de `public/` a `dist/`, listo para GitHub Pages.
+- `npm run generate:cv`: regenera únicamente el CV, sin iniciar el servidor.
+
+El script está en `scripts/generate-cv.mjs`. Usa `defaultLanguage` para el idioma e
+incluye perfil ampliado, habilidades clave, experiencia completa (`highlights`
+y `details`), una sección visible de logros y reconocimientos (`recognition`),
+competencias técnicas agrupadas y formación. Los proyectos personales se muestran
+únicamente en la web. El diseño sigue `public/cv/example.pdf`: formato Letter,
+tipografía Times, encabezado centrado, separadores negros y fechas a la derecha.
+La paginación se adapta al contenido, sin recortar responsabilidades para
+forzarlo a dos páginas. No incluye nombres de proyectos laborales.
+
+`profile.cv.fullName`, `profile.cv.location` y `profile.cv.phone` definen los
+datos del encabezado del CV; los valores iniciales proceden del ejemplo.
+`profile.cv.content.es/en` contiene el perfil profesional, las habilidades clave
+y las competencias ampliadas específicas del CV. Su campo `experience`, por ID
+de empresa, conserva las responsabilidades y logros detallados del documento
+original; las empresas, cargos y fechas siguen viniendo de `experience`. La web
+conserva sus descripciones más breves.
+
+La ruta de salida es `profile.cv.path`, relativa a `public/`; el botón **Descargar
+CV** usa esa misma ruta con `import.meta.env.BASE_URL`, también en Pages con un
+subdirectorio. `profile.cv.filename` define el nombre de descarga. No edites el
+PDF a mano: se reemplaza con cada generación, únicamente al terminar con éxito.
+Si los datos son inválidos, el inicio de Vite o `prebuild` fallan; se conserva
+siempre el último PDF válido. Corrige los datos y, si Vite se detuvo por un error
+de configuración, vuelve a ejecutar `npm run dev`.
+
+El workflow de Pages ejecuta `npm ci` y `npm run build`, y verifica que el PDF
+exista en `dist/` antes de publicar. No necesita pasos adicionales de instalación.
 
 ## Temas claro y oscuro
 
