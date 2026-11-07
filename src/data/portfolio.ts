@@ -48,4 +48,8 @@ export const portfolioData: PortfolioData = {
     tone: oneOf(projectTones, item.tone),
   })),
   skills: source.skills.map(item => ({ ...item, icon: oneOf(iconNames, item.icon) })),
+  featuredSkills: source.featuredSkills.map(item => ({
+    ...item,
+    descriptionKey: textKey(item.descriptionKey),
+  })),
 }

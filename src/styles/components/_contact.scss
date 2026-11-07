@@ -88,21 +88,22 @@
     margin: 0;
   }
 }
-.contact-message {
-  margin: 18px 0;
-  padding-left: 14px;
-  border-left: 2px solid var(--accent-text, #efb67e);
-  color: var(--text-secondary, #aeb4c8);
-  font-size: 12px;
-  line-height: 1.8;
+.contact .contact-email-address {
+  display: block;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+.contact-heading > div {
+  min-width: 0;
 }
 .contact-path-actions {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  button {
+  .contact-email-action {
     display: inline-flex;
     gap: 8px;
     align-items: center;
@@ -118,13 +119,6 @@
     min-height: 44px;
     font-size: 12px;
   }
-}
-.contact-copy-status {
-  display: block;
-  min-height: 16px;
-  margin-top: 8px;
-  font-size: 11px;
-  color: var(--accent-text, #efb67e);
 }
 @include down(mobile) {
   .contact-paths {

@@ -1,5 +1,90 @@
 @use '../abstracts' as *;
 
+.featured-skills {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.featured-skill {
+  min-width: 0;
+  padding: 24px 18px;
+  border: 1px solid $border-subtle;
+  border-radius: 16px;
+  background: var(--card-background, #13172466);
+
+  > svg {
+    color: var(--accent-text, #efb67e);
+  }
+
+  h3 {
+    margin: 18px 0 8px;
+    font: 500 16px/1.4 $font-heading;
+    overflow-wrap: anywhere;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-secondary, #aeb4c8);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+.skills-details {
+  margin-top: 20px;
+
+  > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 1px solid $border-subtle;
+    border-radius: 10px;
+    color: var(--accent-text, #efb67e);
+    font-size: 14px;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $focus-ring;
+      outline-offset: 4px;
+    }
+
+    > svg {
+      flex-shrink: 0;
+    }
+  }
+
+  &[open] > summary > svg {
+    transform: rotate(90deg);
+  }
+}
+
+@include down(mobile) {
+  .featured-skills {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .featured-skill {
+    padding: 20px 14px;
+  }
+}
+
+@media (max-width: 340px) {
+  .featured-skills {
+    grid-template-columns: 1fr;
+  }
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

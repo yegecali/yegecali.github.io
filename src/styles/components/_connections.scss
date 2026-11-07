@@ -8,17 +8,31 @@
 
 .social-card {
   border-radius: 21px;
-  padding: 25px;
-  min-height: 240px;
+  padding: 18px;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
   border: 1px solid var(--border, #ffffff0a);
   transition:
     transform 0.2s,
     border-color 0.2s;
+}
+
+.social-card .card-top {
+  position: static;
+  > svg {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+  }
+}
+
+.social-card > div:nth-child(2) {
+  min-width: 0;
+  padding-right: 14px;
 }
 
 .social-card:hover {
@@ -27,7 +41,11 @@
 }
 
 .github-card {
-  background: var(--github-background, radial-gradient(ellipse at 0 0, #45445070, transparent 70%), linear-gradient(140deg, #242332, #12101e));
+  background: var(
+    --github-background,
+    radial-gradient(ellipse at 0 0, #45445070, transparent 70%),
+    linear-gradient(140deg, #242332, #12101e)
+  );
 }
 
 .linkedin-card {
@@ -49,7 +67,7 @@
 
 .social-card h3 {
   font: 600 24px $font-heading;
-  margin: 6px 0 9px;
+  margin: 4px 0 7px;
   letter-spacing: -0.6px;
 }
 
@@ -58,7 +76,7 @@
   color: var(--text-secondary, #b0aabd);
   line-height: 1.7;
   max-width: 190px;
-  margin: 0 0 17px;
+  margin: 0 0 10px;
 }
 
 .linkedin-card p {
@@ -129,14 +147,13 @@
 
 @include down(tablet) {
   .social-card {
-    padding: 21px;
+    padding: 18px;
   }
 }
 
 @include down(mobile) {
   .social-card {
-    padding: 20px;
-    min-height: 230px;
+    padding: 18px;
     border-radius: 19px;
   }
 
@@ -179,10 +196,6 @@
 @media (max-width: 600px) {
   .bento {
     grid-template-columns: 1fr;
-  }
-
-  .social-card {
-    min-height: 210px;
   }
 
   .social-card p {

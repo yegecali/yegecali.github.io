@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .header {
-  height: 80px;
+  height: var(--header-height);
   position: relative;
   z-index: 10;
   display: flex;
@@ -139,7 +139,6 @@
 
 @include down(mobile) {
   .header {
-    height: 64px;
     gap: 12px;
   }
 

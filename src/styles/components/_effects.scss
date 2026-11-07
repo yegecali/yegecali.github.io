@@ -1,0 +1,220 @@
+@use '../abstracts' as *;
+
+// A small, shared palette keeps effects quiet in either theme.
+:root {
+  --effect-warm: #efb67e;
+  --effect-cool: #9b8caf;
+}
+
+:root[data-theme='light'] {
+  --effect-warm: #ad784d;
+  --effect-cool: #92859e;
+}
+
+// Glass is confined to the compact mobile navigation, not every card.
+@supports (backdrop-filter: blur(1px)) {
+  .header nav.is-open {
+    background: color-mix(in srgb, var(--page-background, #090c16) 92%, transparent);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.hero-action-primary {
+  box-shadow: 0 3px 18px color-mix(in srgb, var(--effect-warm) 9%, transparent);
+}
+
+.project-card,
+.featured-skill {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    background: radial-gradient(
+      220px circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+      color-mix(in srgb, var(--effect-warm) 7%, transparent),
+      transparent 80%
+    );
+    transition: opacity 200ms ease;
+  }
+}
+
+@property --portfolio-border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.project-featured::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--portfolio-border-angle),
+    transparent 0% 78%,
+    color-mix(in srgb, var(--effect-warm) 45%, transparent) 90%,
+    transparent 100%
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0.65;
+}
+
+.featured-skill > svg {
+  transition: transform 200ms ease;
+}
+
+.experience-step::after {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 30px;
+  bottom: -20px;
+  width: 1px;
+  background: color-mix(in srgb, var(--effect-warm) 45%, transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 600ms ease;
+}
+
+.experience-step:last-child::after {
+  bottom: 0;
+}
+
+.experience-step.is-reached {
+  &::after {
+    transform: scaleY(1);
+  }
+
+  &::before {
+    box-shadow:
+      0 0 0 5px $background,
+      0 0 0 6px color-mix(in srgb, var(--effect-warm) 22%, transparent);
+  }
+}
+
+@include up(mobile) {
+  .experience-step::after {
+    left: -26px;
+  }
+}
+
+// Reserved avatar space is the real loading state; no artificial delays.
+.hero-portrait.is-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    var(--card-background, #131724) 30%,
+    var(--control-background, #242836) 50%,
+    var(--card-background, #131724) 70%
+  );
+  background-size: 200% 100%;
+  pointer-events: none;
+}
+
+@keyframes portfolio-border {
+  to {
+    --portfolio-border-angle: 360deg;
+  }
+}
+
+@keyframes portfolio-shimmer {
+  to {
+    background-position: -150% 0;
+  }
+}
+
+@keyframes portfolio-skeleton {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@include motion-safe {
+  body,
+  .header,
+  .project-card,
+  .featured-skill,
+  .skill-card,
+  .experience-card,
+  .contact,
+  .contact-path {
+    transition:
+      background-color 220ms ease,
+      color 220ms ease,
+      border-color 220ms ease;
+  }
+
+  .hero-portrait.is-loading::after {
+    animation: portfolio-skeleton 1.6s linear infinite;
+  }
+
+  .project-featured:focus-visible::after {
+    animation: portfolio-border 5s linear 1;
+  }
+}
+
+@media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
+  .intro h1 > span {
+    background: linear-gradient(
+      105deg,
+      var(--accent-text, #efb67e) 35%,
+      var(--text-primary, #f1f1f8) 49%,
+      var(--accent-text, #efb67e) 63%
+    );
+    background-size: 250% 100%;
+    background-position: 150% 0;
+    background-clip: text;
+    color: transparent;
+    animation: portfolio-shimmer 2.4s ease-out 500ms 1 both;
+  }
+}
+
+@include fine-pointer {
+  .project-card:hover::before,
+  .featured-skill:hover::before {
+    opacity: 1;
+  }
+
+  .hero-action-primary:hover {
+    box-shadow: 0 4px 22px color-mix(in srgb, var(--effect-warm) 15%, transparent);
+  }
+
+  @include motion-safe {
+    .project-featured:hover::after {
+      animation: portfolio-border 5s linear 1;
+    }
+
+    .featured-skill:hover > svg {
+      transform: translateY(-2px) scale(1.04);
+    }
+  }
+}
+
+@include down(mobile) {
+  .hero-action:active {
+    opacity: 0.9;
+  }
+}
+
+@include reduced-motion {
+  .experience-step::after {
+    transform: none;
+  }
+  .hero-portrait.is-loading::after {
+    background-position: 50% 0;
+  }
+}

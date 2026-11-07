@@ -31,7 +31,7 @@ for (const project of data.projects)
 for (const job of data.experience) {
   assert.ok(html.includes(escapeHtml(job.company)), `Missing rendered employer ${job.id}`)
   assert.ok(
-    html.includes(escapeHtml(job.content[data.defaultLanguage].projectDescription)),
+    html.includes(escapeHtml(job.content[data.defaultLanguage].summary)),
     `Missing rendered experience ${job.id}`,
   )
 }

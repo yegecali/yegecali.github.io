@@ -36,14 +36,6 @@ export default function Intro() {
         </div>
       </div>
       <ProfileSidebar />
-      <ul className="intro-specialties" aria-label={t.heroSpecialtiesLabel}>
-        {t.heroSpecialties.map((specialty, index) => (
-          <li key={specialty}>
-            <span aria-hidden="true">0{index + 1}</span>
-            {specialty}
-          </li>
-        ))}
-      </ul>
     </section>
   )
 }

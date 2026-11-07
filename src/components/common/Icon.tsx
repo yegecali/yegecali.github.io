@@ -19,6 +19,7 @@ import {
   LuMonitor,
   LuMenu,
   LuX,
+  LuMail,
 } from 'react-icons/lu'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import type { IconBaseProps, IconType } from 'react-icons'
@@ -47,6 +48,7 @@ const icons: Record<IconName, IconType> = {
   monitor: LuMonitor,
   menu: LuMenu,
   x: LuX,
+  mail: LuMail,
 }
 
 type IconProps = IconBaseProps & { name: IconName }

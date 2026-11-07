@@ -11,7 +11,6 @@
 @use 'components/connections';
 @use 'components/projects';
 @use 'components/experience';
-@use 'components/project-themes';
 @use 'components/skills';
 @use 'components/about';
 @use 'components/contact';
@@ -21,3 +20,4 @@
 @use 'base/motion';
 @use 'vendors/aos';
 @use 'vendors/react-spring';
+@use 'components/effects';

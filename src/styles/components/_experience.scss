@@ -7,7 +7,7 @@
   margin: 26px 0;
   border-left: 1px solid #efb67e38;
   display: grid;
-  gap: 20px;
+  gap: 28px;
   > li {
     position: relative;
     min-width: 0;
@@ -27,11 +27,11 @@
 .experience-card {
   border: 1px solid var(--border, #ffffff12);
   border-radius: 16px;
-  padding: 20px 16px;
+  padding: 22px 18px;
   background: var(--card-background, linear-gradient(140deg, #171a2a, #0f1321));
   overflow-wrap: anywhere;
   h3 {
-    font: 500 18px/1.4 $font-heading;
+    font: 600 clamp(18px, 2.4vw, 23px)/1.35 $font-heading;
     margin: 5px 0 8px;
   }
   h4 {
@@ -49,18 +49,17 @@
 }
 .experience-header {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   gap: 14px;
 }
 .company-monogram {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   flex-shrink: 0;
   border-radius: 12px;
-  border: 1px solid #efb67e38;
+  border: 1px solid var(--border-hover, #efb67e38);
   color: $accent;
   background: #efb67e0b;
   font: 600 14px $font-heading;
@@ -71,10 +70,60 @@
   font-weight: 600;
   margin: 0;
 }
+.experience-body,
+.experience-identity {
+  min-width: 0;
+}
+.experience-period {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid $border-subtle;
+  color: $text-muted;
+  font: 500 14px/1.5 $font-heading;
+  > time:first-child {
+    color: $text-primary;
+    font-size: 20px;
+  }
+}
+.experience-card .experience-contributions {
+  margin: 0 0 12px;
+  color: $text-muted;
+  font: 500 10px/1.5 $font-heading;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.experience-current {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border: 1px solid var(--border-hover, #efb67e40);
+  border-radius: 999px;
+  background: var(--chip-background, #efb67e0b);
+  color: $accent;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.5;
+  &::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+}
+.experience-card.is-current {
+  border-color: var(--border-hover, #efb67e40);
+}
 .experience-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 18px;
+  align-items: center;
+  gap: 6px;
   color: $text-muted;
   font-size: 12px;
   line-height: 1.7;
@@ -86,14 +135,13 @@
   }
 }
 .experience-summary,
-.experience-highlights,
-.experience-project p {
+.experience-highlights {
   color: var(--text-secondary, #b2b8cb);
   font-size: 14px;
   line-height: 1.8;
 }
 .experience-summary {
-  margin: 22px 0 16px;
+  margin: 22px 0;
 }
 .experience-highlights {
   padding-left: 20px;
@@ -105,16 +153,6 @@
     color: $accent;
   }
 }
-.experience-project {
-  margin: 22px 0;
-  padding: 18px;
-  border-left: 2px solid $accent;
-  background: #efb67e07;
-  border-radius: 0 10px 10px 0;
-  p {
-    margin: 0;
-  }
-}
 .experience-label {
   color: $accent;
   font: 500 10px/1.8 $font-heading;
@@ -124,7 +162,6 @@
 .experience-details {
   margin-top: 22px;
   border-top: 1px solid var(--border, #ffffff12);
-  border-bottom: 1px solid var(--border, #ffffff12);
   summary {
     display: flex;
     align-items: center;
@@ -150,7 +187,7 @@
     }
   }
   &[open] {
-    padding-bottom: 18px;
+    padding-bottom: 4px;
     summary > span {
       transform: rotate(45deg);
     }
@@ -191,14 +228,34 @@
     }
   }
   .experience-card {
-    padding: 28px;
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 28px;
+    padding: 30px;
+  }
+  .experience-period {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0;
+    padding: 0 24px 0 0;
+    border-bottom: 0;
+    border-right: 1px solid $border-subtle;
+    > time:first-child {
+      font-size: 28px;
+      letter-spacing: -1px;
+    }
+  }
+  .experience-period-separator {
+    font-size: 12px;
+  }
+  .company-monogram {
+    width: 48px;
+    height: 48px;
   }
   .experience-header {
     flex-direction: row;
     gap: 18px;
-  }
-  .experience-project {
-    padding: 22px;
   }
   .education-card {
     padding: 26px;

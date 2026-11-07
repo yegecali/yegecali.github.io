@@ -51,7 +51,8 @@
       "path": "images/profile-avatar.jpg",
       "width": 512,
       "height": 512
-    }
+    },
+    "email": "yemi.canchari@gmail.com"
   },
   "navigation": [
     {
@@ -69,6 +70,10 @@
     {
       "id": "about",
       "labelKey": "about"
+    },
+    {
+      "id": "contact",
+      "labelKey": "contactNav"
     }
   ],
   "socials": [
@@ -114,88 +119,137 @@
       "labelKey": "all"
     },
     {
-      "id": "cloud",
-      "labelKey": "cloud"
-    },
-    {
       "id": "backend",
       "labelKey": "backend"
     },
     {
-      "id": "quality",
-      "labelKey": "quality"
+      "id": "tools",
+      "labelKey": "tools"
+    },
+    {
+      "id": "cloud",
+      "labelKey": "infrastructure"
     }
   ],
   "projects": [
     {
-      "name": "automation-identity-azure",
-      "url": "https://github.com/yegecali/automation-identity-azure",
-      "description": {
-        "es": "Automatización de tareas e integraciones de identidad en el ecosistema Azure.",
-        "en": "Automation of identity tasks and integrations in the Azure ecosystem."
-      },
-      "tags": [
-        "Azure",
-        "Automation",
-        "Identity"
-      ],
-      "id": "automation-identity-azure",
-      "category": "cloud",
-      "displayName": "Identity automation",
-      "icon": "cloud",
-      "tone": "teal"
-    },
-    {
-      "name": "proxy-resilience",
+      "name": "Proxy Resilience",
       "url": "https://github.com/yegecali/proxy-resilience",
       "description": {
-        "es": "Exploración de mecanismos de resiliencia y tolerancia a fallos.",
-        "en": "Exploration of resilience and fault-tolerance mechanisms."
+        "es": "Resiliencia para las integraciones de servicios backend.",
+        "en": "Resilience for backend service integrations."
       },
       "tags": [
-        "Resilience",
-        "Backend"
+        "Spring",
+        "Circuit Breaker",
+        "Strategy",
+        "Proxy"
       ],
       "id": "proxy-resilience",
       "category": "backend",
       "displayName": "Proxy resilience",
       "icon": "activity",
-      "tone": "purple"
+      "tone": "purple",
+      "featured": true,
+      "highlights": {
+        "es": [
+          "Circuit Breaker para gestionar fallos.",
+          "Patrón Strategy para separar la lógica del proxy."
+        ],
+        "en": [
+          "Circuit Breaker for failure handling.",
+          "Strategy pattern to separate proxy logic."
+        ]
+      }
     },
     {
-      "name": "template-karate-e2e",
-      "url": "https://github.com/yegecali/template-karate-e2e",
+      "id": "chrome-code-review",
+      "name": "Code Review · Chrome",
+      "url": null,
       "description": {
-        "es": "Plantilla para pruebas automatizadas de extremo a extremo.",
-        "en": "Template for automated end-to-end testing."
+        "es": "Revisión de entregables desde el navegador.",
+        "en": "Reviewing deliverables from the browser."
       },
       "tags": [
-        "Karate",
-        "E2E",
-        "Testing"
+        "TypeScript",
+        "Chrome Extension",
+        "Code Review"
       ],
-      "id": "template-karate-e2e",
-      "category": "quality",
-      "displayName": "Karate E2E",
-      "icon": "shield",
-      "tone": "amber"
+      "category": "tools",
+      "displayName": "Review workflow",
+      "icon": "code",
+      "tone": "amber",
+      "featured": false,
+      "highlights": {
+        "es": [
+          "Revisión de las instrucciones de cada entregable.",
+          "Apoyo a mi flujo de code review en Chrome."
+        ],
+        "en": [
+          "Review of instructions for each deliverable.",
+          "Support for my code review workflow in Chrome."
+        ]
+      }
     },
     {
-      "name": "template-playwright-e2e",
-      "url": "https://github.com/yegecali/template-playwright-e2e",
+      "id": "vscode-ai-support",
+      "name": "AI Support · VS Code",
+      "url": null,
       "description": {
-        "es": "Base reutilizable para automatización de pruebas con Playwright.",
-        "en": "Reusable base for test automation with Playwright."
+        "es": "Soporte semiautomatizado desde el editor.",
+        "en": "Semi-automated support from the editor."
       },
       "tags": [
-        "Playwright",
-        "Testing"
+        "TypeScript",
+        "VS Code",
+        "AI Agents",
+        "Jira",
+        "Grafana"
       ],
-      "id": "template-playwright-e2e",
-      "category": "quality",
-      "displayName": "Playwright E2E",
+      "category": "tools",
+      "displayName": "Human-supervised AI",
       "icon": "terminal",
-      "tone": "blue"
+      "tone": "purple",
+      "featured": false,
+      "highlights": {
+        "es": [
+          "Orquestación de agentes IA con Jira y Grafana.",
+          "Supervisión humana durante el proceso de soporte."
+        ],
+        "en": [
+          "AI agent orchestration with Jira and Grafana.",
+          "Human supervision throughout the support process."
+        ]
+      }
+    },
+    {
+      "id": "homelab",
+      "name": "Homelab · Proxmox + k3s",
+      "url": null,
+      "description": {
+        "es": "Infraestructura propia para desarrollar y experimentar.",
+        "en": "My own infrastructure for development and experimentation."
+      },
+      "tags": [
+        "Proxmox",
+        "k3s",
+        "Raspberry Pi"
+      ],
+      "category": "cloud",
+      "displayName": "Personal infrastructure",
+      "icon": "layers",
+      "tone": "blue",
+      "featured": false,
+      "highlights": {
+        "es": [
+          "Dos máquinas como nodos de un clúster y una Raspberry Pi.",
+          "NAS, Jenkins, SonarQube, Vault y Keycloak."
+        ],
+        "en": [
+          "Two machines as cluster nodes and a Raspberry Pi.",
+          "NAS, Jenkins, SonarQube, Vault and Keycloak."
+        ]
+      }
     }
   ],
   "skills": [
@@ -308,7 +362,7 @@
       "hello": "Hola, soy",
       "title": "De una buena idea",
       "title2": "a un sistema que responde.",
-      "intro": "Soy Yemi, ingeniero de software backend. Construyo APIs y microservicios con Java y Azure para resolver problemas reales, con seguridad y rendimiento desde el diseño.",
+      "intro": "Soy Yemi, ingeniero de software backend. Construyo APIs y microservicios con Java reactivo y Azure para resolver problemas reales, con seguridad y rendimiento desde el diseño.",
       "connect": "Conectemos",
       "profile": "Ingeniero de Software Backend",
       "bio": "Soy ingeniero de sistemas especializado en desarrollo backend con Java, microservicios y Azure.",
@@ -367,8 +421,8 @@
       "experienceTitle": "Backend en el mundo real.",
       "experienceDescription": "Microservicios, identidad digital y cloud en entornos bancarios.",
       "present": "Actualidad",
-      "experienceDetails": "Responsabilidades y tecnología",
-      "experienceProject": "Proyecto destacado",
+      "experienceContributions": "Aportes principales",
+      "experienceDetails": "Ver responsabilidades y logros",
       "experienceRecognition": "Reconocimientos",
       "educationLabel": "FORMACIÓN",
       "educationDegree": "Ingeniería de Sistemas",
@@ -387,12 +441,6 @@
       "heroProject": "Tengo un proyecto",
       "heroTalent": "Hablemos de una oportunidad",
       "heroExplore": "Explorar proyectos",
-      "heroSpecialties": [
-        "APIs y microservicios",
-        "Java reactivo",
-        "Azure"
-      ],
-      "heroSpecialtiesLabel": "Mis especialidades",
       "contactCopy": "Copiar mensaje",
       "contactCopied": "Mensaje copiado",
       "contactCopyError": "No se pudo copiar. Puedes seleccionar el texto del mensaje.",
@@ -409,7 +457,22 @@
           "description": "Si mi perfil encaja con lo que buscas, conversemos sobre el puesto y los retos de tu equipo.",
           "message": "Hola, Yemi. Me interesa tu perfil backend con Java y Azure. Quisiera conversar sobre una oportunidad en nuestro equipo."
         }
-      ]
+      ],
+      "contactNav": "Contacto",
+      "showAllSkills": "Ver todas las tecnologías",
+      "featuredJava": "Desarrollo backend",
+      "featuredSpring": "Microservicios reactivos",
+      "featuredAzure": "Servicios en la nube",
+      "featuredArchitecture": "Arquitectura de software",
+      "architectureName": "Arquitectura",
+      "contactEmail": "Escríbeme por correo",
+      "tools": "Herramientas",
+      "workDescription": "Un proxy resiliente, extensiones que acompañan mi trabajo y la infraestructura donde experimento.",
+      "projectFeatured": "Proyecto destacado",
+      "projectPublic": "Código público",
+      "projectNoLink": "Sin enlace público",
+      "infrastructure": "Infraestructura",
+      "projectStack": "Tecnologías"
     },
     "en": {
       "tag": "Software engineering · Peru",
@@ -419,7 +482,7 @@
       "hello": "Hi, I’m",
       "title": "From a good idea",
       "title2": "to a system that delivers.",
-      "intro": "I’m Yemi, a backend software engineer. I build APIs and microservices with Java and Azure to solve real problems, with security and performance designed in from the start.",
+      "intro": "I’m Yemi, a backend software engineer. I build APIs and microservices with reactive Java and Azure to solve real problems, with security and performance designed in from the start.",
       "connect": "Let’s connect",
       "profile": "Backend Software Engineer",
       "bio": "I am a systems engineer specializing in Java backend development, microservices and Azure.",
@@ -478,8 +541,8 @@
       "experienceTitle": "Backend in the real world.",
       "experienceDescription": "Microservices, digital identity and cloud in banking environments.",
       "present": "Present",
-      "experienceDetails": "Responsibilities and technology",
-      "experienceProject": "Featured project",
+      "experienceContributions": "Key contributions",
+      "experienceDetails": "View responsibilities and achievements",
       "experienceRecognition": "Recognition",
       "educationLabel": "EDUCATION",
       "educationDegree": "Systems Engineering",
@@ -498,12 +561,6 @@
       "heroProject": "I have a project",
       "heroTalent": "Let’s discuss an opportunity",
       "heroExplore": "Explore projects",
-      "heroSpecialties": [
-        "APIs & microservices",
-        "Reactive Java",
-        "Azure"
-      ],
-      "heroSpecialtiesLabel": "My specialties",
       "contactCopy": "Copy message",
       "contactCopied": "Message copied",
       "contactCopyError": "Could not copy. You can select the message text instead.",
@@ -520,12 +577,27 @@
           "description": "If my profile matches what you are looking for, let’s discuss the role and your team’s challenges.",
           "message": "Hi Yemi, I’m interested in your Java and Azure backend profile. I’d like to discuss an opportunity on our team."
         }
-      ]
+      ],
+      "contactNav": "Contact",
+      "showAllSkills": "View all technologies",
+      "featuredJava": "Backend development",
+      "featuredSpring": "Reactive microservices",
+      "featuredAzure": "Cloud services",
+      "featuredArchitecture": "Software architecture",
+      "architectureName": "Architecture",
+      "contactEmail": "Email me",
+      "tools": "Tools",
+      "workDescription": "A resilient proxy, extensions that support my work and the infrastructure where I experiment.",
+      "projectFeatured": "Featured project",
+      "projectPublic": "Public source",
+      "projectNoLink": "No public link",
+      "infrastructure": "Infrastructure",
+      "projectStack": "Technologies"
     }
   },
   "effects": {
     "aos": {
-      "duration": 650,
+      "duration": 450,
       "offset": 32,
       "once": true
     },
@@ -552,18 +624,18 @@
             "type": "circle"
           },
           "opacity": {
-            "value": 0.32,
+            "value": 0.7,
             "random": true
           },
           "size": {
-            "value": 2,
+            "value": 3,
             "random": true
           },
           "line_linked": {
             "enable": true,
             "distance": 135,
             "color": "#a89ac9",
-            "opacity": 0.12,
+            "opacity": 0.34,
             "width": 1
           },
           "move": {
@@ -597,15 +669,15 @@
         "tension": 260,
         "friction": 24
       },
-      "tiltDegrees": 4,
-      "hoverLift": 5,
-      "pressScale": 0.98,
-      "transitionOffset": 14,
-      "trail": 70,
-      "floatDistance": 5,
-      "floatRotation": 10,
+      "tiltDegrees": 2,
+      "hoverLift": 2,
+      "pressScale": 0.99,
+      "transitionOffset": 8,
+      "trail": 40,
+      "floatDistance": 2,
+      "floatRotation": 3,
       "floatDuration": 1800,
-      "floatCycles": 3
+      "floatCycles": 1
     }
   },
   "experience": [
@@ -626,7 +698,7 @@
       ],
       "content": {
         "es": {
-          "summary": "Microservicios reactivos y autenticación de identidad digital para canales bancarios, con foco en alta concurrencia, seguridad y disponibilidad.",
+          "summary": "Desarrollo backend en el sector bancario, con foco en microservicios reactivos, seguridad y servicios de alta disponibilidad.",
           "highlights": [
             "Desarrollo de servicios con I/O no bloqueante y gestión eficiente de hilos en Java 17+, Spring WebFlux, RxJava y Quarkus.",
             "Validación de rendimiento con JMeter y k6, analizando percentiles P95 y P99 para asegurar la estabilidad de los servicios.",
@@ -640,15 +712,13 @@
             "Diagnóstico de incidentes de producción con Grafana y Kibana.",
             "Azure Functions para procesamiento asíncrono y participación en revisiones de arquitectura de soluciones."
           ],
-          "projectTitle": "Login Único BCP",
-          "projectDescription": "Servicios de autenticación cross-channel para 20 canales digitales del banco, con hasta 500 solicitudes por segundo en producción, alta disponibilidad y tolerancia a fallos. Autenticación con tarjeta y clave, RSA Token, reconocimiento facial y OTP; protección con CAPTCHA, WAF y Azure Front Door frente a DDoS.",
           "recognition": [
             "Ganador de una hackatón de Java con una solución basada en microservicios y arquitectura a gran escala.",
             "Automatización de validaciones de servicios propios y de terceros a partir de tickets de soporte en ambientes preproductivos."
           ]
         },
         "en": {
-          "summary": "Reactive microservices and digital identity authentication for banking channels, focused on high concurrency, security and availability.",
+          "summary": "Backend development in banking, focused on reactive microservices, security and highly available services.",
           "highlights": [
             "Non-blocking services and efficient thread management with Java 17+, Spring WebFlux, RxJava and Quarkus.",
             "Performance validation with JMeter and k6, analyzing P95 and P99 percentiles to maintain service stability.",
@@ -662,8 +732,6 @@
             "Production incident diagnosis with Grafana and Kibana.",
             "Azure Functions for asynchronous processing and participation in solution architecture reviews."
           ],
-          "projectTitle": "Login Único BCP",
-          "projectDescription": "Cross-channel authentication services for 20 digital banking channels, supporting up to 500 requests per second in production with high availability and fault tolerance. Card and PIN, RSA Token, facial recognition and OTP authentication; CAPTCHA, WAF and Azure Front Door for DDoS protection.",
           "recognition": [
             "Winner of a Java hackathon with a microservices solution and large-scale architecture.",
             "Automated validation of internal and third-party services triggered by support tickets in preproduction environments."
@@ -700,10 +768,8 @@
             "Integración como cliente de HashiCorp Vault, con rotación automática de credenciales y eliminación de secretos en código.",
             "Controles antifraude con CAPTCHA para reducir tráfico malicioso y proteger endpoints críticos."
           ],
-          "projectTitle": "Migración de datos a Azure",
-          "projectDescription": "Participación reconocida en la migración de 20 millones de registros de usuarios desde una base de datos on-premise a cloud mediante un proceso ETL con Azure Data Factory y Databricks.",
           "recognition": [
-            "Reconocimiento por la migración de datos de usuarios de on-premise a cloud."
+            "Reconocimiento por contribuciones técnicas en iniciativas de adopción cloud."
           ]
         },
         "en": {
@@ -719,10 +785,8 @@
             "HashiCorp Vault client integration with automated credential rotation and removal of hardcoded secrets.",
             "CAPTCHA-based antifraud controls to reduce malicious traffic and protect critical endpoints."
           ],
-          "projectTitle": "Data migration to Azure",
-          "projectDescription": "Recognized contribution to migrating 20 million user records from an on-premise database to cloud through an ETL process with Azure Data Factory and Databricks.",
           "recognition": [
-            "Recognition for migrating user data from on-premise to cloud."
+            "Recognition for technical contributions to cloud adoption initiatives."
           ]
         }
       }
@@ -747,5 +811,27 @@
       "#477f86"
     ],
     "lightParticleLine": "#9393a4"
-  }
+  },
+  "featuredSkills": [
+    {
+      "id": "java",
+      "name": "Java",
+      "descriptionKey": "featuredJava"
+    },
+    {
+      "id": "spring",
+      "name": "Spring WebFlux",
+      "descriptionKey": "featuredSpring"
+    },
+    {
+      "id": "azure",
+      "name": "Azure",
+      "descriptionKey": "featuredAzure"
+    },
+    {
+      "id": "architecture",
+      "name": "Architecture",
+      "descriptionKey": "featuredArchitecture"
+    }
+  ]
 }

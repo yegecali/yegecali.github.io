@@ -10,42 +10,50 @@ import type { Language, Project, Translation } from '../types/portfolio'
 
 interface ProjectCardProps {
   project: Project
-  index: number
   categoryLabel: string
   language: Language
   t: Translation
   leaving: boolean
 }
 
-function ProjectCard({ project, index, categoryLabel, language, t, leaving }: ProjectCardProps) {
+function ProjectCard({ project, categoryLabel, language, t, leaving }: ProjectCardProps) {
   return (
-    <SpringLink
-      href={project.url}
-      className={`project-card project-${project.tone}`}
-      tabIndex={leaving ? -1 : 0}
+    <article
+      className={`project-card${project.featured ? ' project-featured' : ''}`}
+      aria-labelledby={`project-${project.id}`}
     >
-      <div className="project-visual">
-        <span className="project-number">
-          {String(index + 1).padStart(2, '0')} / {categoryLabel}
-        </span>
-        <div className="project-art">
-          <span />
-          <Icon name={project.icon} size={43} strokeWidth={1.2} />
-          <span />
-        </div>
-        <span className="visual-caption">{project.displayName}</span>
-        <Icon name="arrow-up-right" size={18} />
-      </div>
       <div className="project-copy">
-        <h3>{project.name}</h3>
+        <div className="project-heading">
+          <span className="project-status">{categoryLabel}</span>
+          {project.featured && <span className="project-featured-label">{t.projectFeatured}</span>}
+        </div>
+        <h3 id={`project-${project.id}`}>{project.name}</h3>
         <p>{project.description[language]}</p>
-        <Tags items={project.tags} />
-        <span className="repo-link">
-          {t.repo}
-          <Icon name="arrow-up-right" size={13} />
-        </span>
+        <ul className="project-highlights">
+          {project.highlights[language].map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <div className="project-stack">
+          <span className="project-stack-label">{t.projectStack}</span>
+          <Tags items={project.tags} />
+        </div>
+        {project.url && (
+          <div className="project-footer">
+            <span className="project-availability">{t.projectPublic}</span>
+            <SpringLink
+              href={project.url}
+              className="repo-link"
+              tabIndex={leaving ? -1 : 0}
+              aria-label={`${t.repo}: ${project.name}`}
+            >
+              {t.repo}
+              <Icon name="arrow-up-right" size={14} />
+            </SpringLink>
+          </div>
+        )}
       </div>
-    </SpringLink>
+    </article>
   )
 }
 
@@ -70,6 +78,7 @@ export default function Projects() {
   return (
     <section id="projects" className="content-section">
       <SectionHeading eyebrow={t.work} title={t.workTitle} marker={data.sections.projects.marker} />
+      <p className="section-description">{t.workDescription}</p>
       <div className="filters" role="group" aria-label={t.filterLabel}>
         {data.projectFilters.map(item => (
           <FilterButton key={item.id} active={filter === item.id} onClick={() => setFilter(item.id)}>
@@ -79,7 +88,7 @@ export default function Projects() {
         ))}
       </div>
       <div className="project-grid">
-        {transitions((style, project, _state, index) => {
+        {transitions((style, project) => {
           const leaving = !visibleProjects.some(item => item.id === project.id)
           return (
             <animated.div
@@ -89,7 +98,6 @@ export default function Projects() {
             >
               <ProjectCard
                 project={project}
-                index={index}
                 categoryLabel={categoryLabels[project.category] ?? project.category}
                 language={language}
                 t={t}

@@ -36,6 +36,8 @@ export default function useInteractiveSpring<Element extends HTMLElement>() {
       return
     const rect = event.currentTarget.getBoundingClientRect()
     if (!rect.width || !rect.height) return
+    event.currentTarget.style.setProperty('--pointer-x', `${event.clientX - rect.left}px`)
+    event.currentTarget.style.setProperty('--pointer-y', `${event.clientY - rect.top}px`)
     const x = Math.max(-0.5, Math.min(0.5, (event.clientX - rect.left) / rect.width - 0.5))
     const y = Math.max(-0.5, Math.min(0.5, (event.clientY - rect.top) / rect.height - 0.5))
     void api.start({

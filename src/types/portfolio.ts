@@ -38,6 +38,7 @@ export const iconNames = [
   'monitor',
   'menu',
   'x',
+  'mail',
 ] as const
 export type IconName = (typeof iconNames)[number]
 export const projectTones = ['teal', 'purple', 'amber', 'blue'] as const
@@ -65,6 +66,7 @@ export type PortfolioData = Narrow<
     socials: Social[]
     projects: Project[]
     skills: Skill[]
+    featuredSkills: Narrow<RawPortfolio['featuredSkills'][number], { descriptionKey: TextKey }>[]
     appearance: Appearance
   }
 >
